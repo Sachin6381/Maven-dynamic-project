@@ -76,9 +76,27 @@ public class Bookingdetail {
 		this.booking_status = booking_status;
 		this.movie_name=movie_name;
 	}
+	public Bookingdetail( int user_id, int theatre_id, int no_seat, int total_amount,
+			String movie_name) {
+		super();
+		
+		this.user_id = user_id;
+		this.theatre_id = theatre_id;
+		this.no_seat = no_seat;
+		this.total_amount = total_amount;
+		
+		this.movie_name=movie_name;
+	}
 	public Bookingdetail() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	
+	public Bookingdetail(int theatre_id) {
+		super();
+		
+		
+		this.theatre_id = theatre_id;
 	}
 	public Bookingdetail(int bookingid2, BookingDaoImpl bookd2) {
 		// TODO Auto-generated constructor stub

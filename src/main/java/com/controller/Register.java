@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.MovieTicketBookingDaoImpl.*;
 import com.MovieticketBookingModel.User;
 
-@WebServlet("/login")
+@WebServlet("/registerpage")
 public class Register extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -27,12 +27,12 @@ public class Register extends HttpServlet {
 		
 		User use=new User(username,gender,email,mobilenumber,password);
 		
-		userDao use1=new userDao();
+		UserDaoImpl use1=new UserDaoImpl();
 		System.out.println("hello");
          int i=use1.insert(use);
          System.out.println(i);
          if(i>0) {
-        	 response.sendRedirect("login.jsp");
+        	 response.sendRedirect("Login1.jsp");
          }
          else
         	 System.out.println("value of i "+i);

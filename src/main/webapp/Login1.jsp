@@ -85,6 +85,7 @@ body {
         <input type="Password" name="Pass" id="Pass" placeholder="Password" required><br><br> 
 
        <button type="submit">Submit</button>
+       <a href="ForgetPassword.jsp">forget password</button>
        </form> 
 </div>
 </body>

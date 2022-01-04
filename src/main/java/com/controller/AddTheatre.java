@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.MovieTicketBookingDaoImpl.TheatreDaoImpl;
 import com.MovieticketBookingModel.Theatreinformation;
@@ -24,6 +25,7 @@ public class AddTheatre extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
+		HttpSession session=request.getSession();
 		DateTimeFormatter formatter =
 	    DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 		String theatrename=request.getParameter("theatrename");
@@ -48,6 +50,8 @@ public class AddTheatre extends HttpServlet {
 		Theatreinformation dao=new Theatreinformation(theatrename,movieid,numberseats,theatreaddress,theatreratings,price,mvTimeDate );
 		TheatreDaoImpl theatre1=new TheatreDaoImpl();
 	    theatre1.insert(dao);
+	    
+	    session.setAttribute("seats",numberseats );
 		response.sendRedirect("AddTheatre.jsp");
 		System.out.println("theatrename");
 		

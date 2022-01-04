@@ -7,6 +7,59 @@
 <title>Insert title here</title>
 </head>
 <body>
+<style>
+        body  
+    {  
+        margin: 100px;  
+        padding: 0;  
+        background-color:#6abadeba;  
+        font-family: 'Arial';  
+    }  
+    .login{  
+            
+            width: 350px;  
+            overflow: hidden;  
+            margin: auto;  
+            margin: 20 0 0 450px;  
+            padding: 30px;  
+            background: #23463f;  
+            border-radius: 15px ;  
+              
+    }  
+    h1{  
+        text-align: center;  
+        color: blue;  
+        padding: 20px;  
+    }  
+    label{  
+        color: #08ffd1;  
+        font-size: 17px;  
+    }
+   
+    input{
+        width: 250px;  
+        height: 30px;  
+        border: none;  
+        border-radius: 3px;  
+        padding-left: 8px;  
+    }
+      label {
+       color:black;
+    }
+    #fe{
+        position: relative;
+        right: 20px;
+    }
+
+    #ot{
+        position: relative;
+        right: 5px;
+    }
+ 
+ 
+    </style>
+    <p>Admin Add theatre<p><br><br>
+    
     <form action="Addtheatre" method="post">
     <label>Enter your Theatre Name:</label>
     <input type="text" name="theatrename"><br><br>

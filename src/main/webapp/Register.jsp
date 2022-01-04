@@ -68,7 +68,7 @@ body {
 
 <div class="login"> 
 
-<form action="login" method="post">
+<form action="registerpage" method="post">
         <h1>Register page</h1> 
        
         <label for ="User Name">Username</label><br>    

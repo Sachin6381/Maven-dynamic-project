@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Movie Booking</title>
 <style>
 img{
 width: 270px;
@@ -33,8 +33,11 @@ List<Theatreinformation> showtheatre;
 %>
 <%
 int id = (int)session.getAttribute("movieid");
+
+
 showtheatre = theatreDaoImpl.showtheatre(id);
 %>
+
 <table>
             <tbody>
                 <tr>
@@ -57,7 +60,7 @@ showtheatre = theatreDaoImpl.showtheatre(id);
                                          <span>Theatre Ratings:<%=theatreinformation.getTheatre_rating() %></span><br>
                                          <span>Movie date and Time:<%=theatreinformation.getMovie_date_time() %></span><br>
                                          <span>price:<%=theatreinformation.getPrice() %></span><br>
-                                        <span> <button>Booking Ticket</button></span>
+                                        <span><a href="Booking.jsp?movieid=<%=theatreinformation.getMovie_id()%>&theatreid=<%=theatreinformation.getTheatre_id()%>"><button>Book Ticket</button></a></span>
                                      
                                     </td>
                                 </tr>

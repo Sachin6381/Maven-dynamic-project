@@ -161,6 +161,15 @@ public class Theatreinformation {
 	}
 
 
+	public Theatreinformation(int theatreid,String n) 
+			 {
+		// TODO Auto-generated constructor stub
+		
+		this.theatre_id = theatreid;
+		
+	}
+
+
 	
 
 

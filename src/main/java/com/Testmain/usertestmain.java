@@ -14,7 +14,7 @@ import com.MovieTicketBookingDaoImpl.AdminDaoImpl;
 import com.MovieTicketBookingDaoImpl.BookingDaoImpl;
 import com.MovieTicketBookingDaoImpl.MovieDaoImpl;
 import com.MovieTicketBookingDaoImpl.TheatreDaoImpl;
-import com.MovieTicketBookingDaoImpl.userDao;
+import com.MovieTicketBookingDaoImpl.UserDaoImpl;
 import com.MovieticketBookingModel.Admin;
 import com.MovieticketBookingModel.Bookingdetail;
 import com.MovieticketBookingModel.Movie;

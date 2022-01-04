@@ -18,7 +18,7 @@ import com.Movieticketbooking.util.Connectionmv4;
 
 
 
-public class userDao {
+public class UserDaoImpl {
 	public int insert(User use) {
 		int i = 0;
 		String query = "insert into user_details(user_name,gender,email_id,mobile_num,e_password) values (?,?,?,?,?)";
@@ -103,8 +103,7 @@ public class userDao {
 			e.printStackTrace();
 		}
 		return null;
-
-	}
+		}
 
 	public User updateUser1(User user2)  {
 		// System.out.println(user2.getEmail_id());
@@ -229,6 +228,28 @@ public class userDao {
 		
 	}
 
-	
+	public int user(User user5) {
+		String query="Select user_id from user_details where email_id=? ";
+		Connection con;
+		try {
+			con = Connectionmv4.DBConnection();
+			PreparedStatement Pstmt1 = con.prepareStatement(query);
+			
+			Pstmt1.setString(1, user5.getEmail_id());
+
+			ResultSet rs = Pstmt1.executeQuery();
+			while(rs.next()) {
+				System.out.println(rs.getInt(1));
+				return rs.getInt(1);
+			}
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return -1;
+	}
 
 }

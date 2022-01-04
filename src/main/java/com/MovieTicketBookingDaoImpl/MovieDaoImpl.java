@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.MovieticketBookingModel.Movie;
+import com.MovieticketBookingModel.User;
 import com.Movieticketbooking.util.Connectionmv4;
 
 public class MovieDaoImpl {
@@ -116,7 +117,9 @@ public class MovieDaoImpl {
 				e.printStackTrace();
 			}
 		}
-		
+	
+	
+	
 	 public void delete(Movie Movie3 )  {
 			
 		        String query="delete from Movie where movie_id=? ";
@@ -156,6 +159,28 @@ public class MovieDaoImpl {
 //}
 //			
 	 }
+		public String movie(Movie movie5) {
+			String query="Select Movie_name from Movie where Movie_id=? ";
+			Connection con;
+			try {
+				con = Connectionmv4.DBConnection();
+				PreparedStatement Pstmt1 = con.prepareStatement(query);
+				
+				Pstmt1.setInt(1, movie5.getMovie_id());
+
+				ResultSet rs = Pstmt1.executeQuery();
+				while(rs.next()) {
+					return rs.getString(1);
+				}
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return null;
+		}
 }
 
 

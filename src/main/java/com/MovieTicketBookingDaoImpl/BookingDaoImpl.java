@@ -18,7 +18,7 @@ import com.Movieticketbooking.util.Connectionmv4;
 
 public class BookingDaoImpl {
 	public void insert(Bookingdetail Booking) {
-	       String  query="insert into booking_detail(user_id,theatre_id,no_seats,total_amount,booking_status,movie_name) values (?,?,?,?,?,?)";
+	       String  query="insert into booking_detail(user_id,theatre_id,no_seats,total_amount,movie_name) values (?,?,?,?,?)";
 		
 			try {
 			Connection	con = Connectionmv4.DBConnection();
@@ -29,8 +29,8 @@ public class BookingDaoImpl {
 				Pstmt1.setInt(2,Booking.getTheatre_id());
 				Pstmt1.setInt(3,Booking.getNo_seat());
 				Pstmt1.setInt(4,Booking.getTotal_amount());
-				Pstmt1.setString(5,Booking.getBooking_status());
-				Pstmt1.setString(6, Booking.getMovie_name());
+				
+				Pstmt1.setString(5, Booking.getMovie_name());
 				
 				int i = Pstmt1.executeUpdate();
 
@@ -121,5 +121,6 @@ public class BookingDaoImpl {
 		       return booking;
 			
 		  }
+			
 
 			}

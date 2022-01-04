@@ -54,11 +54,12 @@ public class TheatreDaoImpl {
 		       List<Theatreinformation> movietheatre=new ArrayList<Theatreinformation>();
 	           Theatreinformation mvtheatre=null;
 		
-		       String showQuery="select * from theatre where movie_id = ?";
+		       String showQuery="select * from theatre where movie_id=? ";
 		       Connectionmv4 connection =new Connectionmv4();
 		       Connection con=connection.DBConnection();
 	           PreparedStatement preparedStatement = con.prepareStatement(showQuery);
 	           preparedStatement.setInt(1, id);
+	         //  preparedStatement.setInt(1, mvid);
 		       ResultSet rs=preparedStatement.executeQuery();
 		       while(rs.next()) {
                mvtheatre=new  Theatreinformation(rs.getString(1),rs.getInt(2),rs.getInt(3),rs.getInt(4),rs.getString(5),rs.getInt(6),rs.getTimestamp(7).toLocalDateTime(),rs.getInt(8),rs.getString(9));
@@ -69,7 +70,28 @@ public class TheatreDaoImpl {
 		       return movietheatre;
 			
 	}
+
+	public void update1(Theatreinformation theatres) {
+		String query="update theatre set number_seats=? where movie_id=? ";
+		 Connection con;
+		try {
+			 con = Connectionmv4.DBConnection();
+			 PreparedStatement pstmt = con.prepareStatement(query);
+			 pstmt.setInt(1, theatres.getNumber_seats());
+			  pstmt.setInt(2, theatres.getMovie_id());
+			 int i = pstmt.executeUpdate();
+		     System.out.println(i+"rows update successfully");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+	}
 	
+
 	public void update(Theatreinformation theatre2 ) {
 		
 		       
@@ -101,6 +123,7 @@ public class TheatreDaoImpl {
 		}
 		
 	}
+      
 	
     public void delete(Theatreinformation theatre3 )  {
 		
@@ -146,4 +169,67 @@ public class TheatreDaoImpl {
 			}
 		    
 }
+   public static ResultSet moviedetail() {
+	   String query="select * from theatre";
+	   ResultSet rs=null;
+	   Connectionmv4 connection =new Connectionmv4();
+		Connection con;
+		try {
+			con = connection.DBConnection();
+			Statement st=con.createStatement();
+			rs=st.executeQuery(query);
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			
+						return rs;
+   }
+	public int fetch(Theatreinformation theatres1) throws ClassNotFoundException, SQLException {
+	String query = "Select  number_seats from theatre  where theatre_id=? ";
+	Connection	con = Connectionmv4.DBConnection();
+   PreparedStatement pstmt = con.prepareStatement(query);
+   System.out.println(theatres1.getTheatre_id() + "jfdhn");
+   pstmt.setInt(1, theatres1.getTheatre_id());
+ResultSet rs = pstmt.executeQuery();
+while(rs.next()) {
+	System.out.println(rs.getInt(1)+"gchj");
+	return rs.getInt(1);
 }
+return -1;
+}
+
+
+
+
+public void updateseat(int seat,int thid) {
+	
+    
+    
+    String query="update theatre set number_seats=? where  theatre_id=? ";
+
+try {
+    Connection	con = Connectionmv4.DBConnection();
+    PreparedStatement pstmt = con.prepareStatement(query);
+    pstmt.setInt(1,seat);
+    pstmt.setInt(2, thid);
+    
+   
+	int i = pstmt.executeUpdate();
+    System.out.println(i+"rows update successfully");
+}catch (ClassNotFoundException e) {
+// TODO Auto-generated catch block
+    e.printStackTrace();
+} catch (Exception e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+
+}
+}
+
+
