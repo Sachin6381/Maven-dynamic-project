@@ -12,7 +12,7 @@
 <title>Insert title here</title>
 <style>
 img{
-width: 270px;
+width: 280px;
 padding:20px;
 }
 span{
@@ -20,6 +20,24 @@ position : relative;
 top:240px;
 left: -200px;
 
+}
+.movieid
+{
+visibility:hidden;
+}
+.searchbtn
+{
+  position:absolute;
+  top:15px;
+  left:1250px;
+  text-decoration:none;
+  color:white;
+}
+.movie
+{
+  color:white;
+  position:relative;
+  right:80px;
 }
 </style>
 </head>
@@ -47,7 +65,7 @@ showmovie = movieDaoImpl.showMovie();
                                         <td><img src=<%=movie.getImages()%> alt="sachin"></td>    
                                         <td class="movie">
                                         <span>Movie name: <%=movie.getMovie_name() %> </span><br>
-                                        <span> Movie id:<label id = "movieid"> <%=movie.getMovie_id() %> </label> </span><br>
+                                        <span  style="visibility:hidden"> Movie id:<label id = "movieid"> <%=movie.getMovie_id() %></label> </span><br>
                                         <span>Movie type: <%=movie.getMovie_type()%> </span><br>
                                         <span>Movie ratings:<%=movie.getMovie_ratings() %> </span><br>
                                         <span>Movie duration:<%=movie.getMovie_duration() %></span><br>
@@ -55,8 +73,8 @@ showmovie = movieDaoImpl.showMovie();
                                          <span>Music director:<%=movie.getMusic_director() %></span><br>
                                          <span>Hero name:<%=movie.getHero_name() %></span><br>
                                         <span> <form action = "Moviedetails">
-                                         <input type = "text" value = <%=movie.getMovielink()%> name = "movlink" style = "visibility:hidden">
-                                         <input type = "submit"></span>
+                                        <input type = "text" value = <%=movie.getMovielink()%> name = "movlink" class="movieid">
+                                        <input type = "submit" value="theatre"></span>
                                          </form>
                                        
                                     </td>
@@ -74,7 +92,7 @@ showmovie = movieDaoImpl.showMovie();
                                      </tr>
                                     </tbody>
                                    </table>
-
-
+                                   
+                                   <a href="SearchMovie.jsp" class="searchbtn">SERACH</a>
 </body>
 </html>

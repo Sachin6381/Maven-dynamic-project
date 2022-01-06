@@ -23,24 +23,28 @@ public class BookingMovieController extends HttpServlet{
 @Override
 protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	MovieDaoImpl movieDaoImpl = new MovieDaoImpl();
-	
-	
+
+
 	HttpSession session = req.getSession();
 	     int userid=(int)session.getAttribute("userid");
+	     System.out.println("session issue "+userid);
 	     int mvid=Integer.parseInt(req.getParameter("Movie"));
 	     int thid=Integer.parseInt(req.getParameter("theatre"));
+	     session.setAttribute("theaterid", thid);
 	     int seat=Integer.parseInt(req.getParameter("Seats"));
+	     session.setAttribute("Seats",seat);
 	     Movie movie = new Movie(mvid);
-	    
+
 	     String mvname=movieDaoImpl.movie(movie);
-	     
+
 	     int totalprice = 180 * seat;
-	     
+	     session.setAttribute("totalprice",totalprice);
+
 	     System.out.println(""+userid +mvid+thid+seat+mvname+totalprice + "");
-	     
+
 	     BookingDaoImpl bookingDaoImpl = new BookingDaoImpl();
 	     Bookingdetail bookingdetail = new Bookingdetail(userid,thid,seat,totalprice,mvname);
-	     
+
 	    bookingDaoImpl.insert(bookingdetail);
 	    com.MovieticketBookingModel.Theatreinformation theatreinformation = new com.MovieticketBookingModel.Theatreinformation(thid, mvname);
 	    TheatreDaoImpl theatreDaoImpl = new TheatreDaoImpl();
@@ -54,6 +58,7 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 	   
 	     
 }

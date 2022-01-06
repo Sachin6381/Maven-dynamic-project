@@ -12,7 +12,7 @@ import com.MovieticketBookingModel.Movie;
 
 
 @WebServlet("/Addmovie")
-public class AddMovie extends HttpServlet {
+public class AdminAddMovie extends HttpServlet {
 	
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

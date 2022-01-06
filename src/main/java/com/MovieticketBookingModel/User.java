@@ -102,6 +102,7 @@ public class User {
 		this.mobile_num = mobile_num;
 		this.e_password = e_password;
 		this.wallet = wallet;
+		
 	}
 
 	public User(long mobile, String email) {
@@ -134,6 +135,21 @@ public class User {
 		this.e_password = e_password;
 		this.wallet = wallet;
 	}
+
+	public User(String user_name, int user_id, String gender, String email_id, long mobile_num, String e_password, int Wallet) {
+		// TODO Auto-generated constructor stub
+		
+		this.user_name=user_name;
+		this.user_id=user_id;
+		this.gender=gender;
+		this.email_id=email_id;
+		this.mobile_num=mobile_num;
+		this.e_password=e_password;
+		this.wallet= Wallet;
+
+	
+	}
+
 
 		
 

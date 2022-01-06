@@ -170,10 +170,43 @@ public class Theatreinformation {
 	}
 
 
+	public Theatreinformation(String theatrename, int movieid, int theatreid, int numberseats, String theatreaddress,
+			int theatreratings, int price2, LocalDateTime mvTimeDate) {
+		// TODO Auto-generated constructor stub
+		this.theatre_name = theatrename;
+		this.movie_id = movieid;
+		this.number_seats = numberseats;
+		this.theatre_address = theatreaddress;
+		this.theatre_rating = theatreratings;
+		this.price = price2;
+		this.movie_date_time = mvTimeDate;
+	}
+
+
+	
+	
+
+
+	public Theatreinformation(String theatre_name, int movie_id2, int theatre_id, int number_seats, String theatre_address , int theatre_rating, int price,
+			LocalDateTime movie_date_time, String images) {
+		// TODO Auto-generated constructor stub
+		this.theatre_name = theatre_name;
+		this.movie_id = movie_id2;
+	    this.theatre_id=theatre_id;
+		this.number_seats = number_seats;
+		this.theatre_address = theatre_address;
+		this.theatre_rating = theatre_rating;
+		this.price = price;
+		this.movie_date_time = movie_date_time;
+	
+		this.images=images;
+	}
+	}
+
+
 	
 
 
 	
 	
     
-}

@@ -43,29 +43,34 @@ public class MovieDaoImpl {
 			   }
 	}
 			
-//	public ResultSet showMovie() throws ClassNotFoundException, SQLException {
-//			
-//				List<Movie> movieList=new ArrayList<Movie>();
-//				Movie mvproduct=null;
-//				
-//				String showQuery="select * from movie";
-//				Connectionmv4 connection =new Connectionmv4();
-//				Connection con=connection.DBConnection();
-//			    Statement stmt=con.createStatement();
-//				ResultSet rs=stmt.executeQuery(showQuery);
-//				
-//				return rs;
-//				while(rs.next()) {
-//			    mvproduct=new  Movie(rs.getString(1),rs.getInt(2),rs.getString(3),rs.getInt(4),rs.getInt(5),rs.getString(6),rs.getString(7),rs.getString(8));
-////				System.out.println(rs.getString(3));
-//			    movieList.add(mvproduct);
-//			  
-//				}
-//				 return movieList;        
-				
+	public List<Movie> Search( String moviename) throws ClassNotFoundException, SQLException 
+	{
+			
+				List<Movie> viewmoviess=new ArrayList<Movie>();
+				Movie mvproduct=null;
+				System.out.println("1");
+				String showQuery="Select movie_name,Movie_type,Movie_duration,Director from  Movie where Movie_name = ?";
+				Connectionmv4 connection =new Connectionmv4();
+				Connection con=connection.DBConnection();
+				 PreparedStatement ps =con.prepareStatement(showQuery);
+				 ps.setString(1, moviename);
+				 ResultSet rs=ps.executeQuery();
+					System.out.println("2");
+
+				while(rs.next()) 
+				{
+					System.out.println("3");
+
+			    mvproduct=new  Movie(rs.getString(1),rs.getString(2),rs.getInt(3),rs.getString(4));
+			viewmoviess.add(mvproduct);
+			  
+				}
+				return viewmoviess;        
+	}		
     
  	public  void searchmovie(Movie Movie1)  {
-			String showQuery="select * from movie where movie_id=? and movie_name=?";
+ 		
+			String showQuery="Select * from movie where movie_id=? and movie_name=?";
 			Connectionmv4 connection =new Connectionmv4();
 			Connection con;
 			try {
@@ -104,9 +109,9 @@ public class MovieDaoImpl {
 				pstmt.setInt(4, Movie2.getMovie_duration());
 				pstmt.setString(5, Movie2.getDirector());
 				pstmt.setString(6, Movie2.getMusic_director());
-				pstmt.setString(6,Movie2.getHero_name());
+				pstmt.setString(7,Movie2.getHero_name());
 				
-				pstmt.setInt(7,Movie2.getMovie_id());
+				pstmt.setInt(8,Movie2.getMovie_id());
 				int i = pstmt.executeUpdate();
 			    System.out.println(i+"rows update successfully");
 		} catch (ClassNotFoundException e) {
@@ -151,13 +156,11 @@ public class MovieDaoImpl {
 			ResultSet rs=stmt.executeQuery(showQuery);
 			while(rs.next()) {
 		    mvproduct=new  Movie(rs.getString(1),rs.getInt(2),rs.getString(3),rs.getInt(4),rs.getInt(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10));
-//			System.out.println(rs.getString(3));
+			System.out.println(rs.getString(3));
 		    movieList.add(mvproduct);
 		  
 			}
-			 return movieList;
-//}
-//			
+			 return movieList;		
 	 }
 		public String movie(Movie movie5) {
 			String query="Select Movie_name from Movie where Movie_id=? ";

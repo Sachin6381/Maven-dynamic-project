@@ -52,14 +52,15 @@ public class Login extends HttpServlet {
           System.out.println(user_role);
 			if(user_role.equals("admin")) {
 				System.out.println("hello");
-				response.sendRedirect("Show.jsp");
+				response.sendRedirect("Addtheatre.jsp");
+			}else if(user_role.equals("user"))
+			 response.sendRedirect("Show.jsp");
+			
 			}
-			else {
-				response.sendRedirect("Show.jsp");
+	  
 
-		   
-		} 
-	}
+	  
+	   
 		
        
 	}

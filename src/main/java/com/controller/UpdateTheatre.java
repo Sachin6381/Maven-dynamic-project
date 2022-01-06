@@ -27,7 +27,7 @@ public class UpdateTheatre extends HttpServlet {
 		DateTimeFormatter formatter =
 			    DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 				String theatrename=request.getParameter("theatrename");
-				String movieid=request.getParameter("movieid");
+				int movieid=Integer.parseInt(request.getParameter("movieid"));
 				int theatreid=Integer.parseInt(request.getParameter("theatre Id"));
 				int numberseats=Integer.parseInt(request.getParameter("Numberseats"));
 				session.setAttribute("numberseats", numberseats);
@@ -38,7 +38,7 @@ public class UpdateTheatre extends HttpServlet {
 		
 			    LocalDateTime mvTimeDate = LocalDateTime.parse(theatreDate);
 			
-				Theatreinformation dao=new Theatreinformation(theatrename,movieid,theatreid,numberseats,theatreaddress,theatreratings,price,theatreDate);
+				Theatreinformation dao=new Theatreinformation(theatrename,movieid,theatreid,numberseats,theatreaddress,theatreratings,price,mvTimeDate );
 				TheatreDaoImpl theatre1=new TheatreDaoImpl();
 			    theatre1.update(dao);
 			    ResultSet rs=TheatreDaoImpl.moviedetail();
@@ -51,6 +51,6 @@ public class UpdateTheatre extends HttpServlet {
 				System.out.println(session.getAttribute("noofseats"));
 				response.sendRedirect("AddTheatre.jsp");
 				
-	}
+	} 
 
 }

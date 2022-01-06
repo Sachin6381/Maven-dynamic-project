@@ -12,6 +12,13 @@ public class Movie {
 	private String images;
 	private String movielink;
 	
+	public Movie(String movie_name, String movie_type, int movie_duration, String director) {
+		super();
+		Movie_name = movie_name;
+		Movie_type = movie_type;
+		this.movie_duration = movie_duration;
+		this.director = director;
+	}
 	public String getMovielink() {
 		return movielink;
 	}

@@ -12,7 +12,7 @@
 <title>Movie Booking</title>
 <style>
 img{
-width: 270px;
+width: 280px;
 padding:20px;
 }
 span{
@@ -21,12 +21,27 @@ top:240px;
 left: -200px;
 
 }
-
+.name{
+position: relative;left:200px;
+}
+.movie
+{
+  position:relative;
+  left:100px;
+  color:white;
+}
+#thimg
+{
+  position:relative;
+  left:200px;
+}
 </style>
 </head>
-<body style="background-color:brown;">
+<body style="background-color:red;">
 </body>
 <body>
+
+
 <%!
 TheatreDaoImpl theatreDaoImpl = new TheatreDaoImpl();
 List<Theatreinformation> showtheatre;
@@ -39,45 +54,53 @@ showtheatre = theatreDaoImpl.showtheatre(id);
 %>
 
 <table>
-            <tbody>
-                <tr>
-                <p>Movie Theatre</p>
-                <%int count=0;
-                for(Theatreinformation theatreinformation: showtheatre){
-                	%>
-                    <td>
-                        <table id="theatretable">
-                            <tbody>
-                                <tr>
-                               
-                                    <td><img src=<%=theatreinformation.getImages()%> alt="sachin"></td>    
-                                    <td class="movie">
+<tbody>
+                                 <tr>
+                                 <p>Movie Theatre</p>
+                                 <%int count=0;
+                                   for(Theatreinformation theatreinformation: showtheatre){
+                           	%>
+                                   <td>
+                                   <table id="theatretable">
+                                   <tbody>
+                                   <tr>
+                                   
+                                     <td><img src=<%=theatreinformation.getImages()%> alt="sachin" id="thimg"></td>    
+                                     <td class="movie">
+                                         
                                         <span>Theatre name: <%=theatreinformation.getTheatre_name() %> </span><br>
-                                        <span> Movie id:<%=theatreinformation.getMovie_id() %>  </span><br>
-                                        <span>Theatre id: <%=theatreinformation.getTheatre_id()%> </span><br>
+                                        <span style="visibility:hidden"> Movie id:<%=theatreinformation.getMovie_id() %>  </span>
+                                        <% System.out.println(theatreinformation.getTheatre_id());%>
+                                        <span style="visibility:hidden"> Theatre id: <%=theatreinformation.getTheatre_id()%> </span><br>
                                         <span>Number seats:<%=theatreinformation.getNumber_seats() %> </span><br>
                                         <span>Theatre Address:<%=theatreinformation.getTheatre_address() %></span><br>
-                                         <span>Theatre Ratings:<%=theatreinformation.getTheatre_rating() %></span><br>
-                                         <span>Movie date and Time:<%=theatreinformation.getMovie_date_time() %></span><br>
-                                         <span>price:<%=theatreinformation.getPrice() %></span><br>
-                                        <span><a href="Booking.jsp?movieid=<%=theatreinformation.getMovie_id()%>&theatreid=<%=theatreinformation.getTheatre_id()%>"><button>Book Ticket</button></a></span>
+                                        <span>Theatre Ratings:<%=theatreinformation.getTheatre_rating() %></span><br>
+                                        <span>price:<%=theatreinformation.getPrice() %></span><br>
+                                        <span>Movie date and Time:<%=theatreinformation.getMovie_date_time() %></span><br><br>
+                                         
+                                        
+                                        <% session.setAttribute("movieid", theatreinformation.getMovie_id());%>
+                                          
+                                     <% session.setAttribute("theaterid", theatreinformation.getTheatre_id()); %>
+                                     <span><a href="Booking.jsp?movieid=<%=theatreinformation.getMovie_id()%>&theatreid=<%=theatreinformation.getTheatre_id()%>"><button>Book Ticket</button></a></span>
+                                        
                                      
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>  
+                                   </td>
+                                   </tr>
+                                   </tbody>
+                                   </table>  
                             
-                    </td>
-                       <% count ++;
-                       if(count==3){ %> 
-                    	   </tr>
-                    	   <tr>              
-                     <%count=0; }}%>  
+                                  </td>
+                                  <% count ++;
+                                  if(count==3){ %> 
+                    	          </tr>
+                    	          <tr>              
+                                  <%count=0; }}%>  
                        
-                </tr>
-            </tbody>
-        </table>
-
+                                  </tr>
+                                  </tbody>
+                                  </table>
+</div>
 
 </body>
 </html>

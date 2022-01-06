@@ -8,53 +8,53 @@
  <style>
     body  
 {  
-    margin: 150px;  
-    padding: 0;  
+    margin:.150px;  
+    padding:0;  
     background-color:#6abadeba;  
-    font-family: 'Arial';  
+    font-family:'Arial';  
 }  
 .login{  
         
-        width: 250px;  
-        overflow: hidden;  
-        margin: auto;  
-        margin: 20 0 0 450px;  
-        padding: 30px;  
-        background: #23463f;  
-        border-radius: 15px ;  
+        width:250px;  
+        overflow:hidden;  
+        margin:auto;  
+        margin:20 0 0 450px;  
+        padding:30px;  
+        background:#23463f;  
+        border-radius:15px ;  
           
 }  
 h1{  
-    text-align: center;  
-    color: #277582;  
-    padding: 20px;  
+    text-align:center;  
+    color:#277582;  
+    padding:20px;  
 }  
 label{  
-    color: #08ffd1;  
-    font-size: 17px;  
+    color:#08ffd1;  
+    font-size:17px;  
 }  
 #Email{  
-    width: 250px;  
-    height: 30px;  
-    border: none;  
-    border-radius: 3px;  
-    padding-left: 8px;  
+    width:250px;  
+    height:30px;  
+    border:none;  
+    border-radius:3px;  
+    padding-left:8px;  
 }  
 #Pass{  
-    width: 250px;  
-    height: 30px;  
-    border: none;  
-    border-radius: 3px;  
-    padding-left: 8px;  
+    width:250px;  
+    height:30px;  
+    border:none;  
+    border-radius:3px;  
+    padding-left:8px;  
       
 }  
 #Sign{  
-    width: 250px;  
-    height: 30px;  
-    border: none;  
-    border-radius: 17px;  
-    padding-left: 8px;  
-    color: blue;  
+    width:250px;  
+    height:30px;  
+    border:none;  
+    border-radius:17px;  
+    padding-left:8px;  
+    color:blue;  
   
   
 }  

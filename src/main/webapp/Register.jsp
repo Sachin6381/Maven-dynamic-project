@@ -20,7 +20,7 @@
             margin: auto;  
             margin: 20 0 0 450px;  
             padding: 30px;  
-            background: #23463f;  
+            background: skyblue;  
             border-radius: 15px ;  
               
     }  
@@ -56,23 +56,25 @@
  
  
     </style>
-        <style>
+    
+    
+    <style>
 body {
-  background-image: url('https://safra-resources.azureedge.net/media-library/images/default-source/default-album/nsf-tuesday-movie-special-overview.jpg?sfvrsn=9a877534_2');
+  background-image: url('https://inc42.com/wp-content/uploads/2019/04/movie-ticketing.jpg');
   background-repeat: no-repeat;
   background-size:cover;
 }
 </style>
 </head>
 <body>
-
+<h2>Welcome To Like MyShow</h2>
 <div class="login"> 
 
 <form action="registerpage" method="post">
         <h1>Register page</h1> 
        
-        <label for ="User Name">Username</label><br>    
-        <input type="text" name="User" id="User" placeholder="Username"><br><br>  
+        <label for ="User Name">Username</label><br>     
+        <input type="text" name="User" id="User" placeholder="Username" pattern="[A-Za-z]{3,}"title="minimum 3 characters should be there"><br><br>  
 
         <label for="Gender">Gender</label><br>
         <label for="" class="radio">Male</label>  <input type="radio" name="gender" value="male"> 
@@ -82,16 +84,19 @@ body {
     
            
         <label for ="Email">Email Id</label><br>    
-        <input type="text" name="Email" id="Email" placeholder="Email-Id"><br><br>  
+        <input type="text" name="Email" id="Email" pattern="[a-z0-9]+[@][a-zA-Z]+[.][a-z]+" title="You have to insert @ and . in the username ex.abc@gmail.com" placeholder="Enter your email" onkeydown="validation()"required> <br><br>  
 
         <label for="Mobilenumber">Mobile number</label><br>    
-        <input type="number" name="number" id="number" placeholder="Mobile number"><br><br> 
+        <input type="number" name="number" id="number" pattern="[6-9]{1}[0-9]{9}"placeholder="Enter your number"minlength="10" maxlength="10" required><br><br> 
 
         <label for="Password">Password</label><br>    
-        <input type="text" name="Pass" id="Pass" placeholder="Password"><br><br> 
+        <input type="text" name="Pass" id="Pass" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&?/*$^]).{8,16}$"
+            title="Minimum 8 characters should be there.There should be atleast one numeric,special character,capital letter and small letter." placeholder="Enter your password" minlength="8" maxlength="16" required><br><br> 
 
          
-        <button type="submit">Submit</button>       
+        <button type="submit">Submit</button>      
+         <button type="submit">Reset</button>  
+         <a href="Login1.jsp">Login</a>
         
     </div>
     </form> 

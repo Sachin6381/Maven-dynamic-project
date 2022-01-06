@@ -47,7 +47,7 @@ public class BookingDaoImpl {
 	
 	public void update(Bookingdetail Booking)  {
 		
-		    String query="update booking_detail set booking_status=? where booking_id=? ";
+		    String query="update booking_detail set booking_status=? where Movie_name=? ";
 
 		try {
 			Connection con = Connectionmv4.DBConnection();
@@ -113,7 +113,7 @@ public class BookingDaoImpl {
 	           Statement stmt=con.createStatement();
 		       ResultSet rs=stmt.executeQuery(showQuery);
 		       while(rs.next()) {
-              mvtheatre1=new  Bookingdetail(rs.getInt(1),rs.getInt(2),rs.getInt(3),rs.getInt(4),rs.getString(5),rs.getString(6));
+              mvtheatre1=new  Bookingdetail(rs.getInt(1),rs.getInt(2),rs.getInt(3),rs.getInt(4),rs.getInt(5),rs.getString(6),rs.getString(7));
 //			   System.out.println(rs.getString(3));
               booking.add(mvtheatre1);
 	  
@@ -121,6 +121,30 @@ public class BookingDaoImpl {
 		       return booking;
 			
 		  }
-			
+//		  public int book(Bookingdetail booking) {
+//				String query="Select Booking_id from booking_detail where =? ";
+//				Connection con;
+//				try {
+//					con = Connectionmv4.DBConnection();
+//					PreparedStatement Pstmt1 = con.prepareStatement(query);
+//					
+//					Pstmt1.setString(1, );
+//
+//					ResultSet rs = Pstmt1.executeQuery();
+//					while(rs.next()) {
+//						System.out.println(rs.getInt(1));
+//						return rs.getInt(1);
+//					}
+//				} catch (ClassNotFoundException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				} catch (SQLException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+//				return -1;
+//			}
+//
+//			
 
 			}

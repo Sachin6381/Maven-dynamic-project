@@ -87,11 +87,11 @@ public class Bookingdetail {
 		
 		this.movie_name=movie_name;
 	}
-	public Bookingdetail() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
+//	public Bookingdetail() {
+//		super();
+//		// TODO Auto-generated constructor stub
+//	}
+//	
 	public Bookingdetail(int theatre_id) {
 		super();
 		
@@ -106,8 +106,25 @@ public class Bookingdetail {
 		this.booking_status=status;
 		this.booking_id=bookingid2;
 	}
+	public Bookingdetail(int Booking_id,int user_id, int theatre_id, int no_seat, int total_amount,String Booking_status,String movie_name) {
+		// TODO Auto-generated constructor stub
+        this.booking_id= Booking_id; 
+		this.user_id = user_id;
+		this.theatre_id = theatre_id;
+		this.no_seat = no_seat;
+		this.total_amount = total_amount;
+		this.booking_status = Booking_status;
+		this.movie_name=movie_name;
+	}
+	public Bookingdetail(String mvname , String ticket) {
+		// TODO Auto-generated constructor stub
+		this.movie_name=mvname;
+		this.booking_status=ticket;
+	}
+	
 	
 }
+
 		
 	
 

@@ -62,7 +62,7 @@ public class UserDaoImpl {
 			System.out.println("hi");
 			System.out.println(email);
 			System.out.println(password);
-			rs=pstmt.executeQuery(query);
+			rs=pstmt.executeQuery();
 			rs.next();
 			return rs.getString(1);
 		} catch (SQLException e) {
@@ -77,32 +77,32 @@ public class UserDaoImpl {
 
 	}
 
-	public User updateUser(User user1)  {
+	public void updateUser(User user1) throws SQLException, ClassNotFoundException  {
 
 		Connectionmv4 conect = new Connectionmv4();
 		Connection con;
-		try {
+		
 			con = conect.DBConnection();
-		String updateQuery = "update user_details set email_id=? where mobile_num=?";
+		String updateQuery = "update user_details set e_password=? where email_id=?";
 		PreparedStatement pstmt = con.prepareStatement(updateQuery);
-		pstmt.setString(1, user1.getEmail_id());
-		pstmt.setLong(2, user1.getMobile_num());
-		ResultSet rs = pstmt.executeQuery();
-		while (rs.next()) {
-
-			System.out.println("Updated");
-			User user = new User(rs.getString(1), rs.getString(3));
-			return user;
-
-		}}
-		catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
+		pstmt.setString(1, user1.getE_password());
+		pstmt.setString(2, user1.getEmail_id());
+		pstmt.executeUpdate();
+//		while (rs.next()) {
+//
+//			System.out.println("Updated");
+//			User user = new User(rs.getString(1), rs.getString(3));
+//			return user;
+//
+//		}}
+//		catch (ClassNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		return null;
 		}
 
 	public User updateUser1(User user2)  {
@@ -217,7 +217,7 @@ public class UserDaoImpl {
 		ResultSet rs=stmt.executeQuery(showQuery);
 		while(rs.next()) {
 			
-	    userproducts=new  User(rs.getString(1),rs.getString(3),rs.getString(4),rs.getLong(5),rs.getString(6),rs.getInt(7));
+	    userproducts=new  User(rs.getString(1),rs.getInt(2),rs.getString(3),rs.getString(4),rs.getLong(5),rs.getString(6),rs.getInt(7));
 //		System.out.println(rs.getString(3));
 	    userList.add(userproducts);
 	  

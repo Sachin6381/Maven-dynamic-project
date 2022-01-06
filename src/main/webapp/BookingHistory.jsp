@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
       <%@ page import="com.MovieTicketBookingDaoImpl.*" %>
     <%@ page import="java.util.*" %>
-    <%@ page import="com.MovieticketBookingModel.User" %>
+    <%@ page import="com.MovieticketBookingModel.Bookingdetail" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,34 +10,37 @@
 <title>Insert title here</title>
 </head>
 <body>
-  <% UserDaoImpl dao= new UserDaoImpl();
-  List<User> userList=new ArrayList<User>();
-	userList=UserDaoImpl .showuser();%>
-          <h2 class="Userdetail">User Detail</h2>
+  <% BookingDaoImpl dao= new BookingDaoImpl();
+  List<Bookingdetail> showBooking;
+	showBooking=dao.showBooking();
+	%>
+	
+	
+          <h2 class="Bookingdetail">Booking Detail</h2>
           
         
-        <div class="recently added list">
+        <div class="Booking list">
         <table border=1 >
             <tbody>
                 <tr>
                 <%int count=0;
-                for(User userdetail: userList){
+                for(Bookingdetail bookingdetail: showBooking){
                 	%>
                     <td>
-                        <table id="user">
+                        <table id="booking">
                             <tbody>
                                 <tr>
                                      
                                     <td class="viewall">
-                                        <span>Name : <%=userdetail.getUser_id()%> </span><br>
-                                        <span>password : <%=userdetail.getUser_name()%>  </span><br>
-                                        <span>Email : <%=userdetail.getEmail_id()%> </span><br>
-                                        <span>Email : <%=userdetail.getMobile_num()%> </span><br>
-                                      
-                                        <span>phone number: <%=userdetail.getE_password()%></span><br>
-                                            
+                                        <span>Booking Id: <%=bookingdetail.getBooking_id()%> </span><br>
+                                        <span>Theatre Id : <%=bookingdetail.getTheatre_id()%>  </span><br>
+                                        <span>User Id: <%=bookingdetail.getUser_id()%> </span><br>
+                                        <span>Booked seats : <%=bookingdetail.getNo_seat()%> </span><br>
+                                         <span>Total Amount : <%=bookingdetail.getTotal_amount()%> </span><br>
+                                        <span>Status: <%=bookingdetail.getBooking_status()%></span><br>
+                                         <span>Movie Name: <%=bookingdetail.getMovie_name()%></span><br>  
                                        
-                                    </td>
+                                       </td>
                                 </tr>
                             </tbody>
                         </table>  

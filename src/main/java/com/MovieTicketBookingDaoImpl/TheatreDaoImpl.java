@@ -19,7 +19,7 @@ public class TheatreDaoImpl {
 
 	public void insert(Theatreinformation theatre ) {
 		    System.out.println(theatre.getMovie_date_time());
-	        String  query="insert into theatre(theatre_name, movie_id,number_seats,theatre_address,theatre_rating,movie_date_time,price) values (?,?,?,?,?,?,?)";
+	        String  query="insert into theatre(theatre_name, movie_id,number_seats,theatre_address,theatre_rating,price,movie_date_time) values (?,?,?,?,?,?,?)";
 			Connection con;
 			try {
 				Connection 	con1 = Connectionmv4.DBConnection();
@@ -30,8 +30,9 @@ public class TheatreDaoImpl {
 			    Pstmt1.setString(4,theatre.getTheatre_address());
 			    Pstmt1.setInt(5,theatre.getTheatre_rating());
 			   //ava.sql.Timestamp mvDateTime = java.sql.Timestamp.valueOf(theatre.getMovie_date_time());
-			    Pstmt1.setTimestamp(6,java.sql.Timestamp.valueOf(theatre.getMovie_date_time()));
-			    Pstmt1.setInt(7,theatre.getPrice());
+			    Pstmt1.setInt(6,theatre.getPrice());
+			    Pstmt1.setTimestamp(7,java.sql.Timestamp.valueOf(theatre.getMovie_date_time()));
+
 			    
 				int i = Pstmt1.executeUpdate();
 
@@ -62,11 +63,12 @@ public class TheatreDaoImpl {
 	         //  preparedStatement.setInt(1, mvid);
 		       ResultSet rs=preparedStatement.executeQuery();
 		       while(rs.next()) {
-               mvtheatre=new  Theatreinformation(rs.getString(1),rs.getInt(2),rs.getInt(3),rs.getInt(4),rs.getString(5),rs.getInt(6),rs.getTimestamp(7).toLocalDateTime(),rs.getInt(8),rs.getString(9));
-//			   System.out.println(rs.getString(3));
+               mvtheatre=new  Theatreinformation(rs.getString(1),rs.getInt(2),rs.getInt(3),rs.getInt(4),rs.getString(5),rs.getInt(6),rs.getInt(7),rs.getTimestamp(8).toLocalDateTime(),rs.getString(9));
+			   System.out.println(rs.getInt(3));
                movietheatre.add(mvtheatre);
 	  
 		        }
+		       System.out.println(movietheatre);
 		       return movietheatre;
 			
 	}
@@ -106,10 +108,10 @@ public class TheatreDaoImpl {
 		        pstmt.setInt(3, theatre2.getNumber_seats());
 	            pstmt.setString(4,theatre2.getTheatre_address());
 	            pstmt.setInt(5, theatre2.getTheatre_rating());
-	            Theatreinformation theatre = null;
-				java.sql.Timestamp mvDateTime = java.sql.Timestamp.valueOf(theatre.getMovie_date_time());
-			    Pstmt.setTimestamp(6,java.sql.Timestamp.valueOf(theatre.getMovie_date_time()));
-			    Pstmt.setInt(7,theatre.getPrice());
+              
+//				java.sql.Timestamp mvDateTime = java.sql.Timestamp.valueOf(theatre.getMovie_date_time());
+			    pstmt.setTimestamp(6,java.sql.Timestamp.valueOf(theatre2.getMovie_date_time()));
+			    pstmt.setInt(7,theatre2.getPrice());
 	        
 	        	pstmt.setInt(8,theatre2.getTheatre_id());
 	        	int i = pstmt.executeUpdate();

@@ -11,18 +11,19 @@
 </head>
 <body> 
 <style>
+
 body {
-  background-image: url('https://inc42.com/wp-content/uploads/2019/04/movie-ticketing.jpg');
+  background-image: url('https://images.pexels.com/photos/132197/pexels-photo-132197.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
   background-repeat: no-repeat;
   background-size:cover;
 }
 </style>   
+<%!int thid;
+int movid;
+%>
 <%int mvid = Integer.parseInt(request.getParameter("movieid"));
-
 TheatreDaoImpl thetreDao=new TheatreDaoImpl();
 List<Theatreinformation> movieList=thetreDao.showtheatre(mvid);
-
-
 %>
 
 <% int count=0;
@@ -31,26 +32,32 @@ for(Theatreinformation theatre: movieList){
 
 
 
-    <p>  Theatre Details Follow Below Booking Details</p><br>
-   Movie id :<input type="text" name="theatre" value="<%= theatre.getMovie_id() %>"><br><br>
-   Theatre id:  <input type="text" name="movie" value="<%= theatre.getTheatre_id() %>"><br><br>
-   Theatre name:  <input type="text" name="movie" value="<%= theatre.getTheatre_name() %>"><br><br>
-   Available Seats :<input type="text" name="seat" value="<%= theatre.getNumber_seats ()%>"><br><br>
-
+   
+ <span style="visibility:hidden "> Movie id :<input type="text" name="theatre" value="<%= theatre.getMovie_id() %>"><br><br></span>
+  <span style="visibility:hidden ">  Theatre id:  <input type="text" name="movie" value="<%= theatre.getTheatre_id() %>"><br><br></span>
+   <p> Theatre Details</p><br>
+   Theatre name:  <input type="text" name="movie" value="<%= theatre.getTheatre_name()%>" readonly="readonly"><br><br>
+   Available Seats :<input type="text" name="seat" value="<%= theatre.getNumber_seats ()%>" readonly="readonly"><br><br>
+<% thid = theatre.getTheatre_id() ;
+movid = theatre.getMovie_id();
+System.out.println(thid);
+System.out.println(movid);
+%>
 <%} %>
 <form action="bookmov" method="post" >
-            <p>BooKing Ticket<p>
-         
-        <label for ="Movie Id"> Movie Id</label><br>
-        <input type="Movie Id" name="Movie" id="Movie"><br><br>
+            <p>BooKing your Ticket<p>
+       
+
+        <label for ="Movie Id"> Movie Id:</label><br>
+        <input type="number" name="Movie" id="Movie" value ="<%=movid%>" readonly="readonly" ><br><br>
         <label for ="Movie Theatre Id"> Theatre Id</label><br>
-        <input type="Movie Theatre Id" name="theatre" id="theatre"><br><br>
+        <input type="number" name="theatre" id="theatre" value= "<%=thid %>" readonly="readonly"><br><br>
         <label for ="Number of seats">Number of seats</label><br>    
         <input type="Number" name="Seats" id="Seats"><br><br>
         <button type="submit">book</button>
         
         
-               
+              
         
          
 </form>
