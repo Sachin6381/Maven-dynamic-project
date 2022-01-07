@@ -1,11 +1,14 @@
 E:\Workspace\MovieticketBooking\src\main\java\com\Movieticketbooking\util\Connectionmv4.java
+E:\Workspace\MovieticketBooking\src\main\java\com\controller\Wallet.java
+E:\Workspace\MovieticketBooking\src\main\java\com\controller\AdminAddMovie.java
 E:\Workspace\MovieticketBooking\src\main\java\com\MovieticketBookingModel\Admin.java
+E:\Workspace\MovieticketBooking\src\main\java\com\controller\BookingMovieController.java
 E:\Workspace\MovieticketBooking\src\main\java\com\controller\UpdateTheatre.java
 E:\Workspace\MovieticketBooking\src\main\java\com\MovieTicketBookingDaoImpl\TheatreDaoImpl.java
 E:\Workspace\MovieticketBooking\src\main\java\com\MovieticketBookingModel\Bookingdetail.java
 E:\Workspace\MovieticketBooking\src\main\java\com\controller\Login.java
 E:\Workspace\MovieticketBooking\src\main\java\com\MovieticketBookingModel\User.java
-E:\Workspace\MovieticketBooking\src\main\java\com\controller\AddMovie.java
+E:\Workspace\MovieticketBooking\src\main\java\com\controller\CancelTicket.java
 E:\Workspace\MovieticketBooking\src\main\java\com\MovieTicketBookingDaoImpl\UserDaoImpl.java
 E:\Workspace\MovieticketBooking\src\main\java\com\MovieTicketBookingDaoImpl\MovieDaoImpl.java
 E:\Workspace\MovieticketBooking\src\main\java\com\Testmain\usertestmain.java
@@ -15,6 +18,7 @@ E:\Workspace\MovieticketBooking\src\main\java\com\controller\Adminlogin.java
 E:\Workspace\MovieticketBooking\src\main\java\com\MovieTicketBookingDaoImpl\BookingDaoImpl.java
 E:\Workspace\MovieticketBooking\src\main\java\com\MovieTicketBookingDaoImpl\AdminDaoImpl.java
 E:\Workspace\MovieticketBooking\src\main\java\com\controller\MovieUpdate.java
+E:\Workspace\MovieticketBooking\src\main\java\com\controller\Search.java
 E:\Workspace\MovieticketBooking\src\main\java\com\MovieticketBookingModel\Movie.java
 E:\Workspace\MovieticketBooking\src\main\java\com\MovieTicketBookingDao\Booking.java
 E:\Workspace\MovieticketBooking\src\main\java\com\MovieTicketBookingDao\User.java

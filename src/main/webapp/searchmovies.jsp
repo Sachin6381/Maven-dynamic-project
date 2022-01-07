@@ -10,8 +10,19 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style >
+.one
+{
+position:relative;
+margin-left:400px;
+}
+
+</style>
+
 </head>
 <body>
+
+<div class="one">
       <%
       
       List<Movie> searchList =(List<Movie>) session.getAttribute("moviename");
@@ -22,7 +33,7 @@
 <thead>
 <tr>
 <th>S.No</th>
-  <th >Movie Name</th>
+<th >Movie Name</th>
 <th>Movie Type</th>
 <th>Duration</th>
 <th>Direcrtor</th>
@@ -56,8 +67,8 @@ System.out.println(list);
 
 %>
       </tbody>
-          </table>
+      </table>
       
-      
+   </div>   
 </body>
 </html>

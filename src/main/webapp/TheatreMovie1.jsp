@@ -56,7 +56,7 @@ showtheatre = theatreDaoImpl.showtheatre(id);
 <table>
 <tbody>
                                  <tr>
-                                 <p>Movie Theatre</p>
+                                 <h1><b>Movie Theatre</b></h1>
                                  <%int count=0;
                                    for(Theatreinformation theatreinformation: showtheatre){
                            	%>

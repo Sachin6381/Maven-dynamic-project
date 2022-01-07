@@ -5,60 +5,62 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style>
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+</style>
+</head>
+<body style="background-color:red;">
+</body>
+<body>
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="Login1.jsp">logout</a></li>
+  
+  <li><a href="AddTheatre.jsp">AddTheatre</a></li>
+ 
+</ul>
+ </style>
 </head>
 <body>
-<style>
-        body  
-    {  
-        margin: 100px;  
-        padding: 0;  
-        background-color:#6abadeba;  
-        font-family: 'Arial';  
-    }  
-    .login{  
-            
-            width: 350px;  
-            overflow: hidden;  
-            margin: auto;  
-            margin: 20 0 0 450px;  
-            padding: 30px;  
-            background: #23463f;  
-            border-radius: 15px ;  
-              
-    }  
-    h1{  
-        text-align: center;  
-        color: blue;  
-        padding: 20px;  
-    }  
-    label{  
-        color: #08ffd1;  
-        font-size: 17px;  
-    }
-   
-    input{
-        width: 250px;  
-        height: 30px;  
-        border: none;  
-        border-radius: 3px;  
-        padding-left: 8px;  
-    }
-      label {
-       color:black;
-    }
-    #fe{
-        position: relative;
-        right: 20px;
-    }
 
-    #ot{
-        position: relative;
-        right: 5px;
-    }
+   
  
  
-    </style>
-    <p>Admin Add theatre<p><br><br>
+   
+    <h1>Add Theatre<h1><br><br>
     
     <form action="Addtheatre" method="post">
     <label>Enter your Theatre Name:</label>
@@ -77,12 +79,12 @@
     <input type="datetime-local" name=" Movie date and time"><br><br>
     <label>Enter your Price:</label> 
     <input type="text" name="Price"><br><br>
-     <button type="submit">Add Theatre</button>
+     <button type="submit">Add Theatre</button><br>
      
    </form>
+    <h2>Update Theatre</h2>
 
-
-<form action="Updatetheatre" method="post">
+     <form action="Updatetheatre" method="post">
     <label>Enter your Theatre Name:</label>
     <input type="text" name="theatrename"><br><br>
     <label>Enter your movie Id:</label> 
@@ -99,9 +101,11 @@
     <input type="datetime-local" name=" Movie date and time"><br><br>
     <label>Enter your Price:</label> 
     <input type="text" name="Price"><br><br>
-     <button type="submit">Update Theatre</button>
+     <button type="submit">Update Theatre</button><br>
     
     </form>
+    
+    <h3>Delete Theatre</h3>
     
     <form action="Deletetheatre" method="post">
     <label>Enter your Theatre Id:</label> 

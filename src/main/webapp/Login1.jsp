@@ -63,7 +63,7 @@ a{
     background-color: grey;  
     padding-left: 10px;
 }  
-</style>
+</style>.
  <style>
 body {
   background-image: url('https://safra-resources.azureedge.net/media-library/images/default-source/default-album/nsf-tuesday-movie-special-overview.jpg?sfvrsn=9a877534_2');
@@ -79,10 +79,10 @@ body {
      <div class="login"> 
        
         <label for ="Email">Email Id</label><br>    
-        <input type="text" name="Email" id="Email" placeholder="Email-Id" required><br><br>  
+        <input type="email" name="Email" id="Email" placeholder="Email-Id" required><br><br>  
 
         <label for="Password">Password</label><br>    
-        <input type="Password" name="Pass" id="Pass" placeholder="Password" required><br><br> 
+        <input type="password" name="Pass" id="Pass" placeholder="Password" required><br><br> 
 
        <button type="submit">Submit</button>
        <a href="ForgetPassword.jsp">forget password</button>

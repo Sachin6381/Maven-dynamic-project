@@ -98,22 +98,22 @@ public class TheatreDaoImpl {
 		
 		       
 		        
-		        String query="update theatre set theatre_name=?, movie_id=?,number_seats=?,theatre_address=?,theatre_rating=?,movie_date_time=?,price=? where  theatre_id=?  ";
+		        String query="update theatre set theatre_name=?,price=? where  theatre_id=?  ";
 		
 		try {
 		        Connection	con = Connectionmv4.DBConnection();
                 PreparedStatement pstmt = con.prepareStatement(query);
 		        pstmt.setString(1,theatre2.getTheatre_name());
-		        pstmt.setInt(2, theatre2.getMovie_id());
-		        pstmt.setInt(3, theatre2.getNumber_seats());
-	            pstmt.setString(4,theatre2.getTheatre_address());
-	            pstmt.setInt(5, theatre2.getTheatre_rating());
+		       // pstmt.setInt(2, theatre2.getMovie_id());
+		       // pstmt.setInt(3, theatre2.getNumber_seats());
+	          //  pstmt.setString(4,theatre2.getTheatre_address());
+	           // pstmt.setInt(5, theatre2.getTheatre_rating());
               
 //				java.sql.Timestamp mvDateTime = java.sql.Timestamp.valueOf(theatre.getMovie_date_time());
-			    pstmt.setTimestamp(6,java.sql.Timestamp.valueOf(theatre2.getMovie_date_time()));
-			    pstmt.setInt(7,theatre2.getPrice());
+			    //pstmt.setTimestamp(6,java.sql.Timestamp.valueOf(theatre2.getMovie_date_time()));
+			    pstmt.setInt(2,theatre2.getPrice());
 	        
-	        	pstmt.setInt(8,theatre2.getTheatre_id());
+	        	pstmt.setInt(3,theatre2.getTheatre_id());
 	        	int i = pstmt.executeUpdate();
 		        System.out.println(i+"rows update successfully");
 		}catch (ClassNotFoundException e) {

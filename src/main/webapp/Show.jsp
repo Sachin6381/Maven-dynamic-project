@@ -39,11 +39,51 @@ visibility:hidden;
   position:relative;
   right:80px;
 }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
 </style>
 </head>
 <body style="background-color:red;">
 </body>
 <body>
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="Login1.jsp">logout</a></li>
+    <li><a href="UserProfile.jsp">Profile</a></li>
+     <li><a href="Wallet.jsp">Wallet</a></li>
+    
+</ul>
 <%!
 MovieDaoImpl movieDaoImpl = new MovieDaoImpl();
 List<Movie> showmovie;
@@ -54,7 +94,7 @@ showmovie = movieDaoImpl.showMovie();
                                         <table>
                                         <tbody>
                                         <tr>
-                                        <p></b>Movie List</p><b>
+                                        <h1></b>Movie List</h1><b>
                                         <%int count=0;
                                         for(Movie movie: showmovie){
                                       	%>
@@ -93,6 +133,6 @@ showmovie = movieDaoImpl.showMovie();
                                     </tbody>
                                    </table>
                                    
-                                   <a href="SearchMovie.jsp" class="searchbtn">SERACH</a>
+                                   <a href="SearchMovie.jsp" class="searchbtn">Search</a>
 </body>
 </html>

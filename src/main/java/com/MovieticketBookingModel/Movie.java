@@ -118,14 +118,22 @@ public class Movie {
 	public Movie(String moviename, int movieid, String movietype, int movieratings, int movieduration, String director2,
 			String musicdirector, String heroname) {
 		// TODO Auto-generated constructor stub
-		Movie_name = moviename;
-		Movie_id = movieid;
-		Movie_type = movietype;
+	 this.	Movie_name = moviename;
+	this.	Movie_id = movieid;
+	this.	Movie_type = movietype;
 		this.movie_ratings = movieratings;
 		this.movie_duration = movieduration;
 		this.director = director2;
 		this.music_director = musicdirector;
 		this.hero_name = heroname;
+	}
+	public Movie(String moviename, String movietype, int movieduration, int movieid) {
+		
+		// TODO Auto-generated constructor stub
+	this.Movie_name = moviename;
+	this.Movie_type = movietype;
+	this.movie_duration = movieduration;
+	 this.Movie_id = movieid;
 	}
 	@Override
 	public String toString() {

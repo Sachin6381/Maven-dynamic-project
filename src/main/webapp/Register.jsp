@@ -67,7 +67,7 @@ body {
 </style>
 </head>
 <body>
-<h2>Welcome To Like MyShow</h2>
+    <marquee>WELCOME TO LIKE MYSHOW</marquee>
 <div class="login"> 
 
 <form action="registerpage" method="post">
@@ -90,7 +90,7 @@ body {
         <input type="number" name="number" id="number" pattern="[6-9]{1}[0-9]{9}"placeholder="Enter your number"minlength="10" maxlength="10" required><br><br> 
 
         <label for="Password">Password</label><br>    
-        <input type="text" name="Pass" id="Pass" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&?/*$^]).{8,16}$"
+        <input type="password" name="Pass" id="Pass" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&?/*$^]).{8,16}$"
             title="Minimum 8 characters should be there.There should be atleast one numeric,special character,capital letter and small letter." placeholder="Enter your password" minlength="8" maxlength="16" required><br><br> 
 
          

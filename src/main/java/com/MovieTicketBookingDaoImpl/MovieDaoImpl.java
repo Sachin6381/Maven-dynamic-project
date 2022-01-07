@@ -98,20 +98,20 @@ public class MovieDaoImpl {
 		
 	public  void update(Movie Movie2 ) {
 			
-			    String query="update Movie set Movie_name=?,Movie_type=?,Movie_ratings=?,movie_duration=?,director=?,music_director=?,hero_name=? where Movie_id=?";
+			    String query="update Movie set Movie_name=?,Movie_type=?,movie_duration=? where Movie_id=?";
 		     	Connection con;
 	   try {
 				con = Connectionmv4.DBConnection();
 				PreparedStatement pstmt = con.prepareStatement(query);
 				pstmt.setString(1, Movie2.getMovie_name());
 				pstmt.setString(2, Movie2.getMovie_type());
-				pstmt.setInt(3, Movie2.getMovie_ratings());
-				pstmt.setInt(4, Movie2.getMovie_duration());
-				pstmt.setString(5, Movie2.getDirector());
-				pstmt.setString(6, Movie2.getMusic_director());
-				pstmt.setString(7,Movie2.getHero_name());
+				//pstmt.setInt(3, Movie2.getMovie_ratings());
+				pstmt.setInt(3, Movie2.getMovie_duration());
+				//pstmt.setString(5, Movie2.getDirector());
+				//pstmt.setString(6, Movie2.getMusic_director());
+				//pstmt.setString(7,Movie2.getHero_name());
 				
-				pstmt.setInt(8,Movie2.getMovie_id());
+				pstmt.setInt(4,Movie2.getMovie_id());
 				int i = pstmt.executeUpdate();
 			    System.out.println(i+"rows update successfully");
 		} catch (ClassNotFoundException e) {

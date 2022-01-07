@@ -105,9 +105,9 @@ public class User {
 		
 	}
 
-	public User(long mobile, String email) {
+	public User(int Wallet, String email) {
 		// TODO Auto-generated constructor stub
-		this.mobile_num = mobile;
+		this.wallet=Wallet;
 		this.email_id = email;
 	}
 	public User(String email1, String password) {

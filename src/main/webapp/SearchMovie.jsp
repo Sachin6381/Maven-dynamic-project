@@ -5,15 +5,24 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style>
+.one
+{
+position:relative;
+margin-left:500px;
+}
+
+</style>
+
 </head>
 <body>
-
-    <p>Search Movie</p>
+     <div class="one">
+    <h1>Search Movie</h1>
 <form action="Search" method = "post">
- <input type="text" name="moviename" id="moviename"><br>
+ <input type="text" name="moviename" id="moviename"><br><br>
  
  <input type="submit" value="Search">
-
+</div>
 </form>
 </body>
 </html>

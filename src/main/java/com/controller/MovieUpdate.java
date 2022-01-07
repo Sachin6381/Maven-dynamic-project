@@ -19,14 +19,17 @@ public class MovieUpdate extends HttpServlet {
 		//doGet(request, response);
 		
 		String moviename=request.getParameter("movie name");
-		int movieid=Integer.parseInt(request.getParameter("Move id"));
+		
 		String movietype=request.getParameter("Move type");
-		int movieratings=Integer.parseInt(request.getParameter("Move ratings"));
+	//	int movieratings=Integer.parseInt(request.getParameter("Move ratings"));
 		int movieduration=Integer.parseInt(request.getParameter("Move duration"));
-		String director=request.getParameter("Director");
-		String musicdirector=request.getParameter("Music director");
-		String heroname=request.getParameter("Hero name");
-		Movie add1=new Movie(moviename, movieid,movietype,movieratings,movieduration,director,musicdirector, heroname);
+		int movieid=Integer.parseInt(request.getParameter("Move id"));
+	//	String director=request.getParameter("Director");
+	//	String musicdirector=request.getParameter("Music director");
+	//	String heroname=request.getParameter("Hero name");
+		
+		
+		Movie add1=new Movie(moviename,movietype,movieduration, movieid);
 		MovieDaoImpl addmovie1=new MovieDaoImpl();
 		addmovie1.update(add1);
 		response.sendRedirect("Addmovie.jsp");

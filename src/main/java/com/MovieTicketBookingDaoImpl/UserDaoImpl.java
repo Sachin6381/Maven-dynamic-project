@@ -157,19 +157,22 @@ public class UserDaoImpl {
 	}
 
 	// get wallet:
-	public int getwallet(User user) {
-		String query = "select wallet from user_details where user_id in ?";
+	public void getwallet(User user) {
+		String query = "update user_details set wallet=wallet - ? where user_id = ?";
 
 		try {
 			Connection con = Connectionmv4.DBConnection();
 			PreparedStatement Pstmt1 = con.prepareStatement(query);
-			Pstmt1.setInt(1, user.getUser_id());
-
-			ResultSet rs = Pstmt1.executeQuery();
-			while (rs.next()) {
-				System.out.println(rs.getInt(1));
-				return rs.getInt(1);
-			}
+			Pstmt1.setInt(1, user.getwallet());
+			Pstmt1.setInt(2, user.getUser_id());
+			
+			int i=Pstmt1.executeUpdate();
+			System.out.println("wallet reduce");
+//			ResultSet rs = Pstmt1.executeQuery();
+//			while (rs.next()) {
+//				System.out.println(rs.getInt(1));
+//				return rs.getInt(1);
+//			}
 
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -178,18 +181,18 @@ public class UserDaoImpl {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return -1;
+		
 	}
 
 //update wallet:
 	public int updatewallet(User user) {
-		String query = "update user_details set wallet = ? where user_id in ?";
+		String query = "update user_details set wallet =wallet + ? where email_id = ?";
 
 		try {
 			Connection con = Connectionmv4.DBConnection();
 			PreparedStatement Pstmt1 = con.prepareStatement(query);
 			Pstmt1.setInt(1, user.getwallet());
-			Pstmt1.setInt(2, user.getUser_id());
+			Pstmt1.setString(2, user.getEmail_id());
 
 			int rs = Pstmt1.executeUpdate();
 			Pstmt1.executeUpdate("commit");
@@ -252,4 +255,28 @@ public class UserDaoImpl {
 		return -1;
 	}
 
+	
+	public List<User> currentUser1(User obj) throws ClassNotFoundException, SQLException {
+		
+		List<User> userList=new ArrayList<User>();
+		User userproducts=null;
+		System.out.println("COme inside valuees");
+		String showuser="select * from user_details where user_id= ?";
+		Connectionmv4 connection =new Connectionmv4();
+		Connection con=connection.DBConnection();
+		
+	    PreparedStatement stmt=con.prepareStatement(showuser);
+	    stmt.setInt(1, obj.getUser_id());
+	    System.out.println(obj.getUser_id());
+		ResultSet rs=stmt.executeQuery();
+		while(rs.next()) {
+			
+	    userproducts=new  User(rs.getString(1),rs.getString(2),rs.getString(3),rs.getLong(4),rs.getString(5));
+//		System.out.println(rs.getString(3));
+	    userList.add(userproducts);
+	  
+		}
+		
+		 return userList;
+}
 }

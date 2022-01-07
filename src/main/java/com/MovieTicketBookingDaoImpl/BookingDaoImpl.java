@@ -19,9 +19,27 @@ import com.Movieticketbooking.util.Connectionmv4;
 public class BookingDaoImpl {
 	public void insert(Bookingdetail Booking) {
 	       String  query="insert into booking_detail(user_id,theatre_id,no_seats,total_amount,movie_name) values (?,?,?,?,?)";
-		
+//		   String updatewallet ="update user_details set wallet=wallet - ? where user_id=? ";
 			try {
 			Connection	con = Connectionmv4.DBConnection();
+//			PreparedStatement Pstmt0 = con.prepareStatement(updatewallet);
+			
+//		Pstmt0.setInt(1, Booking.getUser_id());
+//		Pstmt0.setInt(2, Booking.getTotal_amount());
+//			
+//			int j=Pstmt0.executeUpdate();
+//			System.out.println("wallet"+j);
+//			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 				PreparedStatement Pstmt1 = con.prepareStatement(query);
 			
 				Pstmt1.setInt(1,Booking.getUser_id());
@@ -33,7 +51,7 @@ public class BookingDaoImpl {
 				Pstmt1.setString(5, Booking.getMovie_name());
 				
 				int i = Pstmt1.executeUpdate();
-
+                
 				//System.out.println("Booking Success");
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
