@@ -5,23 +5,27 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
+
 <style>
         body  
     {  
-        margin: 100px;  
+        margin: 50px;  
         padding: 0;  
         background-color:#6abadeba;  
         font-family: 'Arial';  
     }  
     .login{  
-            
+          
             width: 350px;  
             overflow: hidden;  
             margin: auto;  
             margin: 20 0 0 450px;  
             padding: 30px;  
             background: skyblue;  
-            border-radius: 15px ;  
+            border-radius: 15px ;
+       
+             
               
     }  
     h1{  
@@ -87,15 +91,15 @@ body {
         <input type="text" name="Email" id="Email" pattern="[a-z0-9]+[@][a-zA-Z]+[.][a-z]+" title="You have to insert @ and . in the username ex.abc@gmail.com" placeholder="Enter your email" onkeydown="validation()"required> <br><br>  
 
         <label for="Mobilenumber">Mobile number</label><br>    
-        <input type="number" name="number" id="number" pattern="[6-9]{1}[0-9]{9}"placeholder="Enter your number"minlength="10" maxlength="10" required><br><br> 
+        <input type="text" name="number" id="number" pattern="[6-9]{1}[0-9]{9}" placeholder="Enter your number"minlength="10" maxlength="10" required><br><br> 
 
         <label for="Password">Password</label><br>    
         <input type="password" name="Pass" id="Pass" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&?/*$^]).{8,16}$"
             title="Minimum 8 characters should be there.There should be atleast one numeric,special character,capital letter and small letter." placeholder="Enter your password" minlength="8" maxlength="16" required><br><br> 
 
          
-        <button type="submit">Submit</button>      
-         <button type="submit">Reset</button>  
+        <button type="submit" class="btn btn-primary">Submit</button>      
+         <button type="submit" class="btn btn-primary">Reset</button>  
          <a href="Login1.jsp">Login</a>
         
     </div>

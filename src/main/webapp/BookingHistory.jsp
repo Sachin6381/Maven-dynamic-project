@@ -47,7 +47,7 @@
                             
                     </td>
                        <% count ++;
-                       if(count==5){ %> 
+                       if(count==7){ %> 
                     	   </tr>
                     	   <tr>              
                      <%count=0; }}%>  

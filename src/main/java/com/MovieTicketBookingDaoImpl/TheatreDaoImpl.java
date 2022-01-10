@@ -98,7 +98,7 @@ public class TheatreDaoImpl {
 		
 		       
 		        
-		        String query="update theatre set theatre_name=?,price=? where  theatre_id=?  ";
+		        String query="update theatre set theatre_name=?, price=? where theatre_id=?  ";
 		
 		try {
 		        Connection	con = Connectionmv4.DBConnection();

@@ -49,7 +49,7 @@ public class MovieDaoImpl {
 				List<Movie> viewmoviess=new ArrayList<Movie>();
 				Movie mvproduct=null;
 				System.out.println("1");
-				String showQuery="Select movie_name,Movie_type,Movie_duration,Director from  Movie where Movie_name = ?";
+				String showQuery="Select Movie_name,Movie_id,Movie_type,Movie_duration,Director,Music_director,Hero_name,Images from  Movie where Movie_name = ?";
 				Connectionmv4 connection =new Connectionmv4();
 				Connection con=connection.DBConnection();
 				 PreparedStatement ps =con.prepareStatement(showQuery);
@@ -61,9 +61,9 @@ public class MovieDaoImpl {
 				{
 					System.out.println("3");
 
-			    mvproduct=new  Movie(rs.getString(1),rs.getString(2),rs.getInt(3),rs.getString(4));
-			viewmoviess.add(mvproduct);
-			  
+			    mvproduct=new  Movie(rs.getString(1),rs.getInt(2),rs.getString(3),rs.getInt(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8));
+			    viewmoviess.add(mvproduct);
+			     System.out.println(rs.getInt(2));
 				}
 				return viewmoviess;        
 	}		
@@ -162,6 +162,17 @@ public class MovieDaoImpl {
 			}
 			 return movieList;		
 	 }
+		public ResultSet getmovie() throws SQLException, ClassNotFoundException {
+			String query="Select * from Movie";
+			Connection con;
+			con = Connectionmv4.DBConnection();
+			PreparedStatement pstmt=con.prepareStatement(query);
+			ResultSet rs=pstmt.executeQuery();
+			return rs;
+			
+		}
+		
+		
 		public String movie(Movie movie5) {
 			String query="Select Movie_name from Movie where Movie_id=? ";
 			Connection con;

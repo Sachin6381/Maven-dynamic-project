@@ -2,6 +2,7 @@ package com.MovieticketBookingModel;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 import com.MovieTicketBookingDaoImpl.BookingDaoImpl;
 
@@ -13,7 +14,14 @@ public class Bookingdetail {
 	private int total_amount;
 	private String booking_status;
 	private String movie_name;
+	private Date Booking_date;
 	
+	public Date getBooking_date() {
+		return Booking_date;
+	}
+	public void setBooking_date(Date booking_date) {
+		Booking_date = booking_date;
+	}
 	public int getBooking_id() {
 		return booking_id;
 	}
@@ -87,11 +95,7 @@ public class Bookingdetail {
 		
 		this.movie_name=movie_name;
 	}
-//	public Bookingdetail() {
-//		super();
-//		// TODO Auto-generated constructor stub
-//	}
-//	
+	
 	public Bookingdetail(int theatre_id) {
 		super();
 		
@@ -101,12 +105,13 @@ public class Bookingdetail {
 	public Bookingdetail(int bookingid2, BookingDaoImpl bookd2) {
 		// TODO Auto-generated constructor stub
 	}
-	public Bookingdetail(String status, int bookingid2) {
+	public Bookingdetail(int bookingid2,String status) {
 		// TODO Auto-generated constructor stub
-		this.booking_status=status;
 		this.booking_id=bookingid2;
+		this.booking_status=status;
+		
 	}
-	public Bookingdetail(int Booking_id,int user_id, int theatre_id, int no_seat, int total_amount,String Booking_status,String movie_name) {
+	public Bookingdetail(int Booking_id,int user_id, int theatre_id, int no_seat, int total_amount,String Booking_status,String movie_name,Date Booking_date) {
 		// TODO Auto-generated constructor stub
         this.booking_id= Booking_id; 
 		this.user_id = user_id;
@@ -115,6 +120,7 @@ public class Bookingdetail {
 		this.total_amount = total_amount;
 		this.booking_status = Booking_status;
 		this.movie_name=movie_name;
+		this.Booking_date=Booking_date;
 	}
 	public Bookingdetail(String mvname , String ticket) {
 		// TODO Auto-generated constructor stub

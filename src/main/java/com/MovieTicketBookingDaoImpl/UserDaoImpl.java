@@ -260,7 +260,7 @@ public class UserDaoImpl {
 		
 		List<User> userList=new ArrayList<User>();
 		User userproducts=null;
-		System.out.println("COme inside valuees");
+	
 		String showuser="select * from user_details where user_id= ?";
 		Connectionmv4 connection =new Connectionmv4();
 		Connection con=connection.DBConnection();
@@ -271,7 +271,7 @@ public class UserDaoImpl {
 		ResultSet rs=stmt.executeQuery();
 		while(rs.next()) {
 			
-	    userproducts=new  User(rs.getString(1),rs.getString(2),rs.getString(3),rs.getLong(4),rs.getString(5));
+	    userproducts=new  User(rs.getString(1),rs.getInt(2),rs.getString(3),rs.getString(4),rs.getLong(5),rs.getString(6),rs.getInt(7));
 //		System.out.println(rs.getString(3));
 	    userList.add(userproducts);
 	  

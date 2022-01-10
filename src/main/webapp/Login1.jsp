@@ -5,6 +5,18 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+
  <style>
     body  
 {  
@@ -15,7 +27,7 @@
 }  
 .login{  
         
-        width:250px;  
+        width:350px;  
         overflow:hidden;  
         margin:auto;  
         margin:20 0 0 450px;  
@@ -63,14 +75,16 @@ a{
     background-color: grey;  
     padding-left: 10px;
 }  
-</style>.
- <style>
-body {
-  background-image: url('https://safra-resources.azureedge.net/media-library/images/default-source/default-album/nsf-tuesday-movie-special-overview.jpg?sfvrsn=9a877534_2');
+
+ body {
+  background-image: url('web_4.jpg');
   background-repeat: no-repeat;
   background-size:cover;
 }
+
 </style>
+
+
 </head>
 <body>
  <h1>Login page</h1> 
@@ -84,8 +98,9 @@ body {
         <label for="Password">Password</label><br>    
         <input type="password" name="Pass" id="Pass" placeholder="Password" required><br><br> 
 
-       <button type="submit">Submit</button>
-       <a href="ForgetPassword.jsp">forget password</button>
+       <button type="submit"  class="btn btn-primary" >Submit</button>
+       
+       <a href="ForgetPassword.jsp" class="btn btn-primary" >forget password</button>
        </form> 
 </div>
 </body>

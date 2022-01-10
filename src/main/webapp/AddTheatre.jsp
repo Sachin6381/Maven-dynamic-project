@@ -6,7 +6,6 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <style>
-
 ul {
   list-style-type: none;
   margin: 0;
@@ -39,78 +38,108 @@ li a:hover:not(.active) {
 .active {
   background-color: #04AA6D;
 }
+.ones1{
+  position:absolute;
+  top:80px;
+  left:50px;
+  text-decoration:none;
+  color:white;
+}
+.one{
+  position:absolute;
+  top:80px;
+  left:600px;
+  text-decoration:none;
+  color:white;
+}
+.ones{
+  position:absolute;
+  top:80px;
+  left:1100px;
+  text-decoration:none;
+  color:white;
+}
+
+ body {
+  background-image: url('Rohini Sliver Screen.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+
 </style>
 </head>
-<body style="background-color:red;">
+
 </body>
 <body>
 <ul>
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
+  <li><a class="active" href="home">Home</a></li>
+  <li><a href="News.jsp">News</a></li>
   <li><a href="Login1.jsp">logout</a></li>
+  <li><a href="UserdetailHistory.jsp">UserList</a>
+  <li><a href="BookingHistory.jsp">BookingList</a>
   
   <li><a href="AddTheatre.jsp">AddTheatre</a></li>
  
 </ul>
- </style>
-</head>
-<body>
 
-   
  
- 
-   
-    <h1>Add Theatre<h1><br><br>
+</head>
+
+<body>
+     <div class="ones1">
+    <h1>Add Theatre</h1>
     
     <form action="Addtheatre" method="post">
-    <label>Enter your Theatre Name:</label>
+    <label>Enter your Theatre Name:</label><br>
     <input type="text" name="theatrename"><br><br>
-    <label>Enter your movie Id:</label> 
+    <label>Enter your movie Id:</label> <br>
      <input type="text" name="movieid"><br><br>
-    <label>Enter your Theatre Id:</label> 
+    <label>Enter your Theatre Id:</label><br> 
     <input type="text" name="theatre Id"><br><br>
-    <label>Enter your Number Seats:</label> 
+    <label>Enter your Number Seats:</label> <br>
     <input type="text" name="Numberseats"><br><br>
-    <label>Enter your Theatre Address:</label> 
+    <label>Enter your Theatre Address:</label> <br>
     <input type="text" name="theatre Address"><br><br>
-    <label>Enter your Theatre Ratings:</label> 
+    <label>Enter your Theatre Ratings:</label> <br>
     <input type="text" name="theatre Ratings"><br><br>
-    <label>Enter your Movie date and time:</label> 
+    <label>Enter your Movie date and time:</label> <br>
     <input type="datetime-local" name=" Movie date and time"><br><br>
-    <label>Enter your Price:</label> 
+    <label>Enter your Price:</label> <br>
     <input type="text" name="Price"><br><br>
      <button type="submit">Add Theatre</button><br>
      
    </form>
+   </div>
+   
+   
+   <div class="one">
+   
     <h2>Update Theatre</h2>
 
-     <form action="Updatetheatre" method="post">
-    <label>Enter your Theatre Name:</label>
+     <form action="Updatetheatre1" method="post">
+    <label>Enter your Theatre Name:</label><br>
     <input type="text" name="theatrename"><br><br>
-    <label>Enter your movie Id:</label> 
-     <input type="text" name="movieid"><br><br>
-    <label>Enter your Theatre Id:</label> 
-    <input type="text" name="theatre Id"><br><br>
-    <label>Enter your Number Seats:</label> 
-    <input type="text" name="Numberseats"><br><br>
-    <label>Enter your Theatre Address:</label> 
-    <input type="text" name="theatre Address"><br><br>
-    <label>Enter your Theatre Ratings:</label> 
-    <input type="text" name="theatre Ratings"><br><br>
-    <label>Enter your Movie date and time:</label> 
-    <input type="datetime-local" name=" Movie date and time"><br><br>
-    <label>Enter your Price:</label> 
+    <label>Enter your Price:</label> <br>
     <input type="text" name="Price"><br><br>
+     <label>Enter your Theatre Id:</label> <br>
+    <input type="text" name="theatre Id"><br><br>
      <button type="submit">Update Theatre</button><br>
     
     </form>
+    </div>
     
+    
+    <div class="ones">
     <h3>Delete Theatre</h3>
     
     <form action="Deletetheatre" method="post">
-    <label>Enter your Theatre Id:</label> 
+    <label>Enter your Theatre Id:</label> <br>
     <input type="text" name="theatre Id"><br><br>
     <button type="submit">DeleteTheatre</button>
+    </form>
+    </div>
+    
     
 </body>
 </html>

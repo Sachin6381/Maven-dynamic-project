@@ -5,15 +5,50 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<style >
+.one
+{
+position:relative;
+margin-left:510px;
+margin-top:90px;
+top:60px;
+border:3px solid black;
+padding:10px;
+width:280px;
+}
+ body {
+  background-image: url('web_3.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+</style>
 </head>
-   <h1>Wallet Update</h1>
+  
 <body>
+
+     <div class="one">
+      <h1>Wallet Update</h1>
      <form  action="Wallet" method="post">
+     
+     Enter your Amount:<br>
      <input type="number" name="amount" id="number"><br><br>
      Enter your Email id:<br>
      <input type="email" name="email" id="email"><br><br>
      
-     <button type="submit">Wallet Recharge</button><br><br>
+     <button type="submit"  class="btn btn-primary">Wallet Recharge</button><br><br>
+        Note:Wallet Amount Check Your Profile
+        
+        </div>
      </form>
 </body>
 </html>

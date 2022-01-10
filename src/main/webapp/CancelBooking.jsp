@@ -9,10 +9,11 @@
 <body>
 <form action="bookcancel" method="post" >
       <p>Cancel Ticket</p>
-    Enter Movie name:<label></label><br>
-    <input type="text" name="mvname" id="mvname"><br><br>
-    Enter ticket cancel:<label></label><br>
-    <input type="text" name="cancel" id="cancel"><br>
+  
+    Enter Booking ID:<label></label><br>
+    <input type="text" name="cancel" id="cancel"><br><br>
+     Enter Booking Status:<label></label><br>
+    <input type="text" name="status" id="status"><br><br>
     
     <button type="submit">submit</button>
     </form>

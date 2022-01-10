@@ -10,10 +10,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-  <% UserDaoImpl dao= new UserDaoImpl();
-  List<User> showUser;
-  showUser=dao.showUser();
-	%>
+ <% int usen=(int)session.getAttribute("userid");
+ User usew=new User(usen);
+ UserDaoImpl dao=new UserDaoImpl();
+ List<User> showUser=dao.showUser();
+ %>
+
 	
 	
 	
@@ -38,7 +40,7 @@
                                         <span>Email Id: <%=userdetail.getEmail_id()%> </span><br>
                                         <span>Mobile Number : <%=userdetail.getMobile_num()%> </span><br>
                                         <span>Password: <%=userdetail.getE_password()%></span><br>
-                                        
+                                        <span>Wallet : <%=userdetail.getwallet()%></span><br>
                                             
                                        
                                     </td>
@@ -48,7 +50,7 @@
                             
                     </td>
                        <% count ++;
-                       if(count==4){ %> 
+                       if(count==5){ %> 
                     	   </tr>
                     	   <tr>              
                      <%count=0; }}%>  

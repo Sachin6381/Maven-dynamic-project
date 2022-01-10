@@ -10,10 +10,26 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Movie Booking</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style>
+body{
+	font-weight: bold;
+}
 img{
-width: 280px;
+width: 380px;
 padding:20px;
+position:absolute;
+top:-100px;
+left:10px;	
+}
+.movies{
+
 }
 span{
 position : relative;
@@ -26,18 +42,126 @@ position: relative;left:200px;
 }
 .movie
 {
-  position:relative;
-  left:100px;
-  color:white;
+  position:absolute;
+  left:1000px;
+  top:-160px;
+  color:Block;
 }
 #thimg
 {
   position:relative;
   left:200px;
 }
+
+
+ body {
+  background-image: url('web_3.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+<style>
+img{
+top:20px
+width: 280px;
+padding:20px;
+}
+span{
+position : relative;
+top:240px;
+left: -200px;
+
+}
+.movieid
+{
+visibility:hidden;
+}
+.searchbtn
+{
+  position:absolute;
+  top:15px;
+  left:700px;
+  text-decoration:none;
+  color:white;
+}
+.log
+{
+  position:absolute;
+  top:1px;
+  left:1200px;
+  text-decoration:none;
+  color:white;
+}
+
+
+.movie
+{
+  color:block;
+  position:relative;
+  right:50px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+ 
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+html,body{
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.6)),url(https://www.vetbossel.in/wp-content/uploads/2020/08/movie-ticketing-768x576.jpg);
+     background-repeat: no-repeat;
+     background-size: 100% 700px;
+     position: absolute;  
+     width: 100%;
+}
 </style>
+	
 </head>
-<body style="background-color:red;">
+</body>
+<body>
+<ul>
+ <div class="top">
+   <li><a class="active" href="#home">Home</a></li>
+   <li><a href="News.jsp">News</a></li>
+   <li><a href="UserProfile.jsp">Profile</a></li>
+   <li><a href="Wallet.jsp">Recharge Wallet</a></li>
+    <li><a href="Show.jsp">Movie List</a></li>
+   </div> 
+   <div class="log">
+   
+        <li><a href="Login1.jsp">Logout</a></li>
+   
+   </div>
+  
+    
+</ul>
+</style>
+
 </body>
 <body>
 
@@ -46,6 +170,7 @@ position: relative;left:200px;
 TheatreDaoImpl theatreDaoImpl = new TheatreDaoImpl();
 List<Theatreinformation> showtheatre;
 %>
+
 <%
 int id = (int)session.getAttribute("movieid");
 
@@ -65,24 +190,37 @@ showtheatre = theatreDaoImpl.showtheatre(id);
                                    <tbody>
                                    <tr>
                                    
-                                     <td><img src=<%=theatreinformation.getImages()%> alt="sachin" id="thimg"></td>    
+                                   
+                                <!--      <div class="movies">
+                                     <td><img src=<%=theatreinformation.getImages()%> alt="sachin" id="thimg" style="margin-left:40px;margin-top:140px;width:400px;"></td> 
+                                     </div>    -->
+                                     
+                                     
+                                       <td><img src="<%=theatreinformation.getTheatre_name()%>.jpg" width=100px alt="img" style="margin-left:100px;margin-top:240px;width:600px;"></td>
+                                     
+                                <!--    <img src="https://media-cdn.tripadvisor.com/media/photo-m/1280/14/20/b6/93/screen.jpg" style="margin-left:100px;margin-top:240px;width:600px;">  	--->
+                                     
+                                      
                                      <td class="movie">
                                          
-                                        <span>Theatre name: <%=theatreinformation.getTheatre_name() %> </span><br>
+                              <span><button type="button" class="btn btn-light"> Theatre name: <%=theatreinformation.getTheatre_name() %> </button></span><br>
                                         <span style="visibility:hidden"> Movie id:<%=theatreinformation.getMovie_id() %>  </span>
                                         <% System.out.println(theatreinformation.getTheatre_id());%>
-                                        <span style="visibility:hidden"> Theatre id: <%=theatreinformation.getTheatre_id()%> </span><br>
-                                        <span>Number seats:<%=theatreinformation.getNumber_seats() %> </span><br>
-                                        <span>Theatre Address:<%=theatreinformation.getTheatre_address() %></span><br>
-                                        <span>Theatre Ratings:<%=theatreinformation.getTheatre_rating() %></span><br>
-                                        <span>price:<%=theatreinformation.getPrice() %></span><br>
-                                        <span>Movie date and Time:<%=theatreinformation.getMovie_date_time() %></span><br><br>
+                                        <span style="visibility:hidden"> Theatre id: <%=theatreinformation.getTheatre_id()%></button> </span><br>
+                              <span><button type="button" class="btn btn-light">Available Number seats:<%=theatreinformation.getNumber_seats() %> </button></span><br><br>
+                              <span><button type="button" class="btn btn-light">Theatre Address:<%=theatreinformation.getTheatre_address() %></button></span><br><br>
+                              <span><button type="button" class="btn btn-light">Theatre Ratings:<%=theatreinformation.getTheatre_rating() %></button></span><br><br>
+                               <span><button type="button" class="btn btn-light">price:<%=theatreinformation.getPrice() %></button></span><br><br>
+                               <span><button type="button" class="btn btn-light">Movie date and Time:<%=theatreinformation.getMovie_date_time() %></button></span><br><br>
                                          
                                         
                                         <% session.setAttribute("movieid", theatreinformation.getMovie_id());%>
                                           
                                      <% session.setAttribute("theaterid", theatreinformation.getTheatre_id()); %>
-                                     <span><a href="Booking.jsp?movieid=<%=theatreinformation.getMovie_id()%>&theatreid=<%=theatreinformation.getTheatre_id()%>"><button>Book Ticket</button></a></span>
+                                     <%session.setAttribute("moviedate", theatreinformation.getMovie_date_time()); %>
+                                     <span><a href="Booking.jsp?movieid=<%=theatreinformation.getMovie_id()%>&theatreid=<%=theatreinformation.getTheatre_id()%>" >
+                                    
+                                     <button type="button" class="btn btn-primary">Book Ticket</button>
                                         
                                      
                                    </td>

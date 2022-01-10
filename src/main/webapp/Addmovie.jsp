@@ -38,6 +38,33 @@ li a:hover:not(.active) {
 .active {
   background-color: #04AA6D;
 }
+.ones1{
+  position:absolute;
+  top:80px;
+  left:50px;
+  text-decoration:none;
+  color:white;
+}
+.one{
+  position:absolute;
+  top:80px;
+  left:600px;
+  text-decoration:none;
+  color:white;
+}
+.ones{
+  position:absolute;
+  top:80px;
+  left:1100px;
+  text-decoration:none;
+  color:white;
+}
+ body {
+  background-image: url('Rohini Sliver Screen.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
 </style>
 </head>
 <body style="background-color:red;">
@@ -45,12 +72,12 @@ li a:hover:not(.active) {
 <body>
 <ul>
   <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
+  <li><a href="News.jsp">News</a></li>
   <li><a href="Show.jsp">ShowMovie</a>
   <li><a href="AddTheatre.jsp">AddTheatre</a></li>
   <li><a href="UserdetailHistory.jsp">UserList</a>
-   <li><a href="BookingHistory.jsp">BookingList</a>
-   <li><a href="Login1.jsp">logout</a></li>
+  <li><a href="BookingHistory.jsp">BookingList</a>
+  <li><a href="Login1.jsp">logout</a></li>
     
   
  
@@ -62,51 +89,56 @@ li a:hover:not(.active) {
     
 
     <br>
+    <div class ="ones1">
     <h1>Add New Movies</h1>
     <form action="Addmovie" method="post">
-    <label>Enter your movie name:</label>
+    <label>Enter your movie name:</label><br>
     <input type="text" name="movie name"><br><br>
-    <label>Enter your movie id:</label>
+    <label>Enter your movie id:</label><br>
     <input type="text" name="Move id"><br><br>
-     <label>Enter your movie type:</label>
+     <label>Enter your movie type:</label><br>
     <input type="text" name="Move type"><br><br>
-     <label>Enter your movie ratings:</label>
+     <label>Enter your movie ratings:</label><br>
     <input type="text" name="Move ratings"><br><br>
-    <label>Enter your movie duration:</label>
+    <label>Enter your movie duration:</label><br>
     <input type="text" name="Move duration"><br><br>
-    <label>Enter your Director:</label>
+    <label>Enter your Director:</label><br>
     <input type="text" name="Director"><br><br>
-    <label>Enter your music director:</label>
+    <label>Enter your music director:</label><br>
     <input type="text" name="Music director"><br><br>
-    <label>Enter your Hero name:</label>
+    <label>Enter your Hero name:</label><br>
     <input type="text" name="Hero name"><br><br>
     <button type="submit">Add movie</button>
     
     </form>
+    </div>
    
+   <div class="one">
    <h2>Update Movies</h2>
    
     <form action="updateMovie" method="post">
-    <label>Enter your movie name:</label>
+    <label>Enter your movie name:</label><br>
     <input type="text" name="movie name"><br><br>
-     <label>Enter your movie type:</label>
+     <label>Enter your movie type:</label><br>
     <input type="text" name="Move type"><br><br>
-    <label>Enter your movie duration:</label>
+    <label>Enter your movie duration:</label><br>
      <input type="text" name="Move duration"><br><br>
-    <label>Enter your movie id:</label>
+    <label>Enter your movie id:</label><br>
     <input type="text" name="Move id"><br><br>
    
     
     <button type="submit">Update movie</button>
-    
+      </div>
     </form>
-    
+  
+    <div class="ones">
     <h3>Delete Movies</h3>
     
     <form action="DeleteMovie1"  method="post">
-    <label>Enter your movie id:</label>
+    <label>Enter your movie id:</label><br>
     <input type="text" name="Move id"><br><br>
     <button type="submit">Delete movie</button>
+    </div>
     </form>
     
 </body>

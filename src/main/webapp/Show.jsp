@@ -1,3 +1,4 @@
+<%@page import="java.sql.ResultSet"%>
 <%@page import="com.MovieticketBookingModel.Movie"%>
 <%@page import="com.MovieTicketBookingDaoImpl.MovieDaoImpl"%>
 
@@ -7,12 +8,26 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
+
+
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 <style>
+
+body{
+	font-weight: bold;
+}
 img{
-width: 280px;
+width: 320px;
 padding:20px;
 }
 span{
@@ -29,15 +44,27 @@ visibility:hidden;
 {
   position:absolute;
   top:15px;
-  left:1250px;
+  left:650px;
   text-decoration:none;
   color:white;
 }
+.log
+{
+  position:absolute;
+  top:1px;
+  left:1200px;
+  text-decoration:none;
+  color:white;
+}
+
+
+
+
 .movie
 {
+   position:relative;
+  left:8px;
   color:white;
-  position:relative;
-  right:80px;
 }
 ul {
   list-style-type: none;
@@ -49,7 +76,7 @@ ul {
 
 li {
   float: left;
-  border-right:1px solid #bbb;
+ 
 }
 
 li:last-child {
@@ -69,19 +96,41 @@ li a:hover:not(.active) {
 }
 
 .active {
-  background-color: #04AA6D;
+
+  font-size:x-large;
 }
+
+ body {
+  background-image: url('Rohini Sliver Screen.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+.border{
+	border: 1px solid black;
+	position: relative;
+	top: 200px;
+}
+
 </style>
+
 </head>
-<body style="background-color:red;">
 </body>
 <body>
 <ul>
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="Login1.jsp">logout</a></li>
-    <li><a href="UserProfile.jsp">Profile</a></li>
-     <li><a href="Wallet.jsp">Wallet</a></li>
+
+
+     <div class="top">
+   <li><a class="active" href="Show.jsp">Home</a></li>
+   <li><a href="News.jsp">News</a></li>
+   <li><a href="UserProfile.jsp">Profile</a></li>
+   <li><a href="Wallet.jsp">Recharge Wallet</a></li>
+   </div>
+   
+   <div class="log">
+   
+   <li><a href="Login1.jsp">Logout</a></li>
+   </div>
+  
     
 </ul>
 <%!
@@ -90,6 +139,7 @@ List<Movie> showmovie;
 %>
 <%
 showmovie = movieDaoImpl.showMovie();
+
 %>
                                         <table>
                                         <tbody>
@@ -104,7 +154,9 @@ showmovie = movieDaoImpl.showMovie();
                                          <tr>
                                         <td><img src=<%=movie.getImages()%> alt="sachin"></td>    
                                         <td class="movie">
-                                        <span>Movie name: <%=movie.getMovie_name() %> </span><br>
+                                        
+                                        <span id="movie name">Movie name: <%=movie.getMovie_name() %> </span><br>
+                                       
                                         <span  style="visibility:hidden"> Movie id:<label id = "movieid"> <%=movie.getMovie_id() %></label> </span><br>
                                         <span>Movie type: <%=movie.getMovie_type()%> </span><br>
                                         <span>Movie ratings:<%=movie.getMovie_ratings() %> </span><br>
@@ -112,10 +164,12 @@ showmovie = movieDaoImpl.showMovie();
                                          <span>Movie director:<%=movie.getDirector() %></span><br>
                                          <span>Music director:<%=movie.getMusic_director() %></span><br>
                                          <span>Hero name:<%=movie.getHero_name() %></span><br>
-                                        <span> <form action = "Moviedetails">
+                                        <span> <form action = "Moviedetails?movietoday=<%=movie.getMovie_name() %>">
                                         <input type = "text" value = <%=movie.getMovielink()%> name = "movlink" class="movieid">
-                                        <input type = "submit" value="theatre"></span>
+                                        <button type = "submit" class="btn btn-primary" value="Theatre">Theatre</button></span></div>
+                                      
                                          </form>
+                                         </div>
                                        
                                     </td>
                                     </tr>
@@ -133,6 +187,6 @@ showmovie = movieDaoImpl.showMovie();
                                     </tbody>
                                    </table>
                                    
-                                   <a href="SearchMovie.jsp" class="searchbtn">Search</a>
+                                   <a href="SearchMovie.jsp" class="searchbtn">Search Movie</a>
 </body>
 </html>

@@ -1,6 +1,7 @@
 package com.controller;
 
 import java.io.IOException;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -29,7 +30,7 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 
 	HttpSession session = req.getSession();
 	     int userid=(int)session.getAttribute("userid");
-//	     String mvname1=(String)session.getAttribute("moviename");
+	     String mvname1=(String)session.getAttribute("moviename");
 //	     System.out.println("session issue "+userid);
 	     int mvid=Integer.parseInt(req.getParameter("Movie"));
 	     int thid=Integer.parseInt(req.getParameter("theatre"));
@@ -37,10 +38,25 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 	     int seat=Integer.parseInt(req.getParameter("Seats"));
 	     session.setAttribute("Seats",seat);
 	     Movie movie = new Movie(mvid);
+	     BookingDaoImpl bdi=new BookingDaoImpl();
 	     
 
 	     String mvname=movieDaoImpl.movie(movie);
+	     try {
+			ResultSet rs= bdi.getbookingidanddate(thid,userid);
+			
 
+			session.setAttribute("ResultSet", rs);
+			session.setAttribute("bookingdate", rs.getDate(8));
+			System.out.println(rs.getInt(1)+""+rs.getDate(8));
+		} catch (ClassNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+	     session.setAttribute("moviefortoday", mvname);
 	     int totalprice = 180 * seat;
 	     session.setAttribute("totalprice",totalprice);
 
@@ -62,8 +78,7 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 	    UserDaoImpl dao1=new UserDaoImpl();
 	    
 	      dao1.getwallet(users);
-//	 System.out.println("pothiraj");
-	 
+
 	    
 	    
 	    

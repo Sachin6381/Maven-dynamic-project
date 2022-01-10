@@ -201,6 +201,14 @@ public class Theatreinformation {
 	
 		this.images=images;
 	}
+
+
+	public Theatreinformation(String theatrename, int price2, int theatreid) {
+		// TODO Auto-generated constructor stub
+		this.theatre_name = theatrename;
+		this.price = price2;
+		this.theatre_id=theatreid;
+	}
 	}
 
 

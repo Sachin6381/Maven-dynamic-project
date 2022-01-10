@@ -12,12 +12,18 @@ public class Movie {
 	private String images;
 	private String movielink;
 	
-	public Movie(String movie_name, String movie_type, int movie_duration, String director) {
+	public Movie(String movie_name,int movie_id, String movie_type, int movie_duration, String director,String music_director, String hero_name,String images) {
 		super();
-		Movie_name = movie_name;
-		Movie_type = movie_type;
+		this.Movie_name = movie_name;
+		this.Movie_id=movie_id;
+		this.Movie_type = movie_type;
 		this.movie_duration = movie_duration;
 		this.director = director;
+		this.music_director = music_director;
+		this.hero_name = hero_name;
+		 this.images = images;
+	
+		
 	}
 	public String getMovielink() {
 		return movielink;
@@ -134,6 +140,10 @@ public class Movie {
 	this.Movie_type = movietype;
 	this.movie_duration = movieduration;
 	 this.Movie_id = movieid;
+	}
+	public Movie(String string, int int1, String string2, int int2, String string3, String string4, String string5,
+			String string6, String string7) {
+		// TODO Auto-generated constructor stub
 	}
 	@Override
 	public String toString() {

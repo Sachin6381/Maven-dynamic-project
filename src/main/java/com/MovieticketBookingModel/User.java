@@ -2,8 +2,7 @@ package com.MovieticketBookingModel;
 
 public class User {
 	  private int user_id;
-  
-	private String user_name ;
+	  private String user_name ;
       private String gender;
       private String email_id;
       private long mobile_num;
@@ -120,9 +119,7 @@ public class User {
 		this.user_name = user_name;
 	}
 
-	public User(String string, int int1, String string2, String string3, int int2, String string4, int int3) {
-		// TODO Auto-generated constructor stub
-	}
+
 
 	public User( String user_name, String gender, String email_id, long mobile_num, String e_password,
 			int wallet) {
@@ -136,7 +133,7 @@ public class User {
 		this.wallet = wallet;
 	}
 
-	public User(String user_name, int user_id, String gender, String email_id, long mobile_num, String e_password, int Wallet) {
+	public User(String user_name, int user_id, String gender, String email_id, long mobile_num, String e_password, int wallet) {
 		// TODO Auto-generated constructor stub
 		
 		this.user_name=user_name;
@@ -145,7 +142,7 @@ public class User {
 		this.email_id=email_id;
 		this.mobile_num=mobile_num;
 		this.e_password=e_password;
-		this.wallet= Wallet;
+		this.wallet= wallet;
 
 	
 	}

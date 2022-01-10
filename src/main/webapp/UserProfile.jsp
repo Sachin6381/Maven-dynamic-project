@@ -8,7 +8,24 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
+<style>
+
+.viewall{
+{
+position:relative;
+margin-left:400px;
+}
+
+ body {
+  background-image: url('web_3.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+</style>
 </head>
+
 <body>
 
 <% 
@@ -23,10 +40,11 @@
           <h2 class="Userdetail">User Detail</h2>
           
         
-        <div class="recently added list">
+      
         <table border=1 >
             <tbody>
                 <tr>
+                 
                 <%int count=0;
                 for(User  user1: listproduct){
                 	%>
@@ -34,16 +52,19 @@
                         <table id="carproduct">
                             <tbody>
                                 <tr>
-                                     
-                                    <td class="viewall">
+                                      <div class="one">
+                                      
+                                         <td class="viewall">
+                                    
+                                        <span>UserID: <%=user1.getUser_id()%> </span><br>
                                         <span>Name : <%=user1.getUser_name()%> </span><br>
                                         <span>Gender : <%=user1.getGender()%>  </span><br>
                                         <span>Email ID: <%=user1.getEmail_id()%> </span><br>
-                                      
                                         <span>Mobile number: <%=user1.getMobile_num()%></span><br>
                                          <span>Password:<%= user1.getE_password() %></span><br>
+                                         <span>Wallet : <%=user1.getwallet()%> </span><br>
                                           
-                                          
+                                           </div> 
                                            
                                             
                                        
@@ -58,14 +79,13 @@
                     	   </tr>
                     	   <tr>              
                      <%count=0; }}%>  
-                       
+                        
                 </tr>
             </tbody>
         </table>
          
-        </div>
-    </div>
-   </div>
+     
+  
 
 
 </body>

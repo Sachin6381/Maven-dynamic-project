@@ -17,11 +17,11 @@ public class CancelTicket extends HttpServlet{
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 		
-         String mvname=request.getParameter("mvname");
-         String ticket=request.getParameter("cancel");
+         String booking=request.getParameter("cancel");
+         String ticket=request.getParameter("status");
          BookingDaoImpl book=new BookingDaoImpl();
-         Bookingdetail bookingdetail = new Bookingdetail(mvname,ticket);
+         Bookingdetail bookingdetail = new Bookingdetail(booking,ticket);
 	     
-         book.insert(bookingdetail);
+         book.update(bookingdetail);
 }
 }

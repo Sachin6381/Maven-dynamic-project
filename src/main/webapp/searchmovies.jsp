@@ -17,6 +17,12 @@ position:relative;
 margin-left:400px;
 }
 
+ body {
+  background-image: url('web_3.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
 </style>
 
 </head>
@@ -29,14 +35,17 @@ margin-left:400px;
       %>
       
       <table border="2" id="alljobs">
-<h1><b>Search By Movie List:</b></h1>
+     <h1><b>Search By Movie List:</b></h1>
 <thead>
 <tr>
-<th>S.No</th>
+<th>movie photos</th>
 <th >Movie Name</th>
+<th>Movie id</th>
 <th>Movie Type</th>
 <th>Duration</th>
-<th>Direcrtor</th>
+<th>Director</th>
+<th>music Director</th>
+<th>Hero Name</th>
 <th>Book tickets</th>
 </tr>
 </thead>
@@ -52,11 +61,18 @@ i++;
 System.out.println(list);
 %>
 <tr>
-<td><%=i%></td>
+<td><img src="<%=list.getHero_name()%>.jpg" width=100px alt="img"></td>
+
 <td><%=list.getMovie_name()%></td>
+
+<td><%=list.getMovie_id() %></td>
 <td><%=list.getMovie_type()%></td>
 <td> <%=list.getMovie_duration()%></td>
 <td> <%=list.getDirector()%></td>
+<td> <%=list.getMusic_director() %></td>
+<td> <%=list.getHero_name() %></td>
+
+
 <td> <a href="TheatreMovie1.jsp">Book</a></td>
 
 

@@ -18,28 +18,10 @@ import com.Movieticketbooking.util.Connectionmv4;
 
 public class BookingDaoImpl {
 	public void insert(Bookingdetail Booking) {
-	       String  query="insert into booking_detail(user_id,theatre_id,no_seats,total_amount,movie_name) values (?,?,?,?,?)";
+	       String  query="insert into booking_detail(user_id,theatre_id,no_seats,total_amount,movie_name,Booking_Date) values (?,?,?,?,?,sysdate)";
 //		   String updatewallet ="update user_details set wallet=wallet - ? where user_id=? ";
 			try {
-			Connection	con = Connectionmv4.DBConnection();
-//			PreparedStatement Pstmt0 = con.prepareStatement(updatewallet);
-			
-//		Pstmt0.setInt(1, Booking.getUser_id());
-//		Pstmt0.setInt(2, Booking.getTotal_amount());
-//			
-//			int j=Pstmt0.executeUpdate();
-//			System.out.println("wallet"+j);
-//			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+			Connection	con = Connectionmv4.DBConnection();			
 				PreparedStatement Pstmt1 = con.prepareStatement(query);
 			
 				Pstmt1.setInt(1,Booking.getUser_id());
@@ -131,7 +113,7 @@ public class BookingDaoImpl {
 	           Statement stmt=con.createStatement();
 		       ResultSet rs=stmt.executeQuery(showQuery);
 		       while(rs.next()) {
-              mvtheatre1=new  Bookingdetail(rs.getInt(1),rs.getInt(2),rs.getInt(3),rs.getInt(4),rs.getInt(5),rs.getString(6),rs.getString(7));
+              mvtheatre1=new  Bookingdetail(rs.getInt(1),rs.getInt(2),rs.getInt(3),rs.getInt(4),rs.getInt(5),rs.getString(6),rs.getString(7),rs.getDate(8));
 //			   System.out.println(rs.getString(3));
               booking.add(mvtheatre1);
 	  
@@ -139,30 +121,41 @@ public class BookingDaoImpl {
 		       return booking;
 			
 		  }
-//		  public int book(Bookingdetail booking) {
-//				String query="Select Booking_id from booking_detail where =? ";
-//				Connection con;
-//				try {
-//					con = Connectionmv4.DBConnection();
-//					PreparedStatement Pstmt1 = con.prepareStatement(query);
-//					
-//					Pstmt1.setString(1, );
-//
-//					ResultSet rs = Pstmt1.executeQuery();
-//					while(rs.next()) {
-//						System.out.println(rs.getInt(1));
-//						return rs.getInt(1);
-//					}
-//				} catch (ClassNotFoundException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				} catch (SQLException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
-//				return -1;
-//			}
+		  public void book(Bookingdetail booking) {
+				String query="Update booking_detail set booking_status=? where booking_id=? ";
+				Connection con;
+				
+					try {
+						con = Connectionmv4.DBConnection();
+						PreparedStatement Pstmt1 = con.prepareStatement(query);
+						
+						Pstmt1.setString(1,booking.getBooking_status() );
+						Pstmt1.setInt(2,booking.getBooking_id());
+						int i = Pstmt1.executeUpdate();
+					} catch (ClassNotFoundException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				
+		
+				}
+			
+			
 //
 //			
-
+		  public ResultSet getbookingidanddate(int thid,int userid) throws ClassNotFoundException, SQLException {
+			  String query="select * from booking_detail where theatre_id =? and user_id=?";
+			  ResultSet rs=null;
+			  Connection	con = Connectionmv4.DBConnection();
+			  PreparedStatement pstmt = con.prepareStatement(query);
+			  pstmt.setInt(1, thid);
+      		  pstmt.setInt(2, userid);
+			  rs=pstmt.executeQuery();
+			  return rs;
+		  }
+		  
+		  
 			}

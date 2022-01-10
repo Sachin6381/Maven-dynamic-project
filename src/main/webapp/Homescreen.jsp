@@ -5,38 +5,50 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<head>
 <style>
-        body {
-          background-image: url('Backimage.jpg');
-          background-repeat: no-repeat;
-          background-attachment: fixed;
-          background-size: cover;
-        }
-  .topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+
+  body {
+  background-image: url('First.jpg.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+.topnav2
+{
+  position:absolute;
+  top:10px;
+  left:1250px;
+  text-decoration:none;
+  color:white;
+}
+.topnav
+{
+  position:absolute;
+  top:10px;
+  left:1100px;
+  text-decoration:none;
+  color:red;
 }
 
-.topnav a.active {
-  background-color: #04AA6D;
-  color: white;
 }
  </style>
         
 </head>
 <body>
     <div class="topnav">
-        <a class="active" href="#home">Home</a>
-        <a href="#Login page">Login page</a>
-        <a href="#Register page">Register page</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
+       
+       <a href="Register.jsp"><button type="button" class="btn btn-primary">Register page</button></a>
+      
       </div>
-
+    <div class="topnav2">     
+        <a href="Login1.jsp"><button type="button" class="btn btn-primary">Login page</button></a>
+     </div> 
 </body>
 </head>
