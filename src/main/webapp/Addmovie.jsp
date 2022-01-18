@@ -5,6 +5,14 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style>
 ul {
   list-style-type: none;
@@ -108,7 +116,7 @@ li a:hover:not(.active) {
     <input type="text" name="Music director"><br><br>
     <label>Enter your Hero name:</label><br>
     <input type="text" name="Hero name"><br><br>
-    <button type="submit">Add movie</button>
+    <button type="submit" class="btn btn-primary" >Add movie</button>
     
     </form>
     </div>
@@ -127,7 +135,7 @@ li a:hover:not(.active) {
     <input type="text" name="Move id"><br><br>
    
     
-    <button type="submit">Update movie</button>
+    <button type="submit" class="btn btn-primary">Update movie</button>
       </div>
     </form>
   
@@ -137,7 +145,7 @@ li a:hover:not(.active) {
     <form action="DeleteMovie1"  method="post">
     <label>Enter your movie id:</label><br>
     <input type="text" name="Move id"><br><br>
-    <button type="submit">Delete movie</button>
+    <button type="submit" class="btn btn-primary">Delete movie</button>
     </div>
     </form>
     

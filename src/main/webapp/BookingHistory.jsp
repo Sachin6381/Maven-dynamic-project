@@ -8,6 +8,36 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style>
+.class{
+
+color:white;
+}
+
+h2
+{
+ color:white;
+}
+table
+{
+   width:100%;
+   
+}
+
+
+
+ body {
+ background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('Rohini Sliver Screen.jpg');
+  background-image: url('Rohini Sliver Screen.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+</style>
+
+
+
+
+
 </head>
 <body>
   <% BookingDaoImpl dao= new BookingDaoImpl();
@@ -27,11 +57,14 @@
                 for(Bookingdetail bookingdetail: showBooking){
                 	%>
                     <td>
-                        <table id="booking">
-                            <tbody>
-                                <tr>
+                    <table id="booking">
+                     <tbody>
+                     <tr>
                                      
-                                    <td class="viewall">
+                                   <td class="viewall">
+                                    
+                                   <div class="class">
+                                    
                                         <span>Booking Id: <%=bookingdetail.getBooking_id()%> </span><br>
                                         <span>Theatre Id : <%=bookingdetail.getTheatre_id()%>  </span><br>
                                         <span>User Id: <%=bookingdetail.getUser_id()%> </span><br>
@@ -39,13 +72,15 @@
                                          <span>Total Amount : <%=bookingdetail.getTotal_amount()%> </span><br>
                                         <span>Status: <%=bookingdetail.getBooking_status()%></span><br>
                                          <span>Movie Name: <%=bookingdetail.getMovie_name()%></span><br>  
-                                       
-                                       </td>
+                                    </div>
+                                    
+                                    
+                                </td>
                                 </tr>
-                            </tbody>
+                        </tbody>
                         </table>  
                             
-                    </td>
+                        </td>
                        <% count ++;
                        if(count==7){ %> 
                     	   </tr>

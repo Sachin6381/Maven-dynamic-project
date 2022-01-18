@@ -9,12 +9,38 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
 <style>
 
-.viewall{
+.one
 {
 position:relative;
-margin-left:400px;
+margin-left:550px;
+border:4px solid black;
+top:90px;
+padding:20px;
+}
+
+.ones{
+  position:absolute;
+  top:50px;
+  left:1250px;
+  text-decoration:none;
+  color:white
+
 }
 
  body {
@@ -37,24 +63,32 @@ margin-left:400px;
    
    
 	%>
-          <h2 class="Userdetail">User Detail</h2>
+        
           
         
       
-        <table border=1 >
+        <table border=0 >
             <tbody>
                 <tr>
                  
                 <%int count=0;
                 for(User  user1: listproduct){
                 	%>
-                    <td>
-                        <table id="carproduct">
-                            <tbody>
-                                <tr>
-                                      <div class="one">
+                 <td>
+                 <table id="movie">
+                 <tbody>
+                 <tr>
+                                        
                                       
                                          <td class="viewall">
+                                         
+                                          <div class="one">
+                                          
+          <img src="profile1.png" style="margin-left:20px;margin-top:20px;width:130px;">  	
+                                     
+                                      
+                                          
+                                            <h2 class="Userdetail">User Profile</h2>
                                     
                                         <span>UserID: <%=user1.getUser_id()%> </span><br>
                                         <span>Name : <%=user1.getUser_name()%> </span><br>
@@ -66,14 +100,22 @@ margin-left:400px;
                                           
                                            </div> 
                                            
+                                           
+                                           
+                                           <div class="ones">
+
+                                            <button><a href="Show.jsp"  class="btn btn-primary">Back</a></button>  
+
+                                           </div>
+                                           
                                             
                                        
                                     </td>
-                                </tr>
-                            </tbody>
-                        </table>  
+                                    </tr>
+                                    </tbody>
+                                    </table>  
                             
-                    </td>
+                                    </td>
                        <% count ++;
                        if(count==5){ %> 
                     	   </tr>

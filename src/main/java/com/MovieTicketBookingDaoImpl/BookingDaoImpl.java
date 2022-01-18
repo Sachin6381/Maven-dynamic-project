@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.MovieTicketBookingMessage.Mailer;
 import com.MovieticketBookingModel.Bookingdetail;
 import com.MovieticketBookingModel.Movie;
 import com.MovieticketBookingModel.Theatreinformation;
@@ -32,8 +33,10 @@ public class BookingDaoImpl {
 				
 				Pstmt1.setString(5, Booking.getMovie_name());
 				
-				int i = Pstmt1.executeUpdate();
-                
+				boolean flag = Pstmt1.executeUpdate()>0;
+				if(flag) {
+				Mailer.send("sachinraj6878@gmail.com", "Sachinraj@089", "karthikmarieswaran6477@gmail.com", "Movie Booking", "Your Ticket Booking Confirmed");
+				}
 				//System.out.println("Booking Success");
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
@@ -47,7 +50,7 @@ public class BookingDaoImpl {
 	
 	public void update(Bookingdetail Booking)  {
 		
-		    String query="update booking_detail set booking_status=? where Movie_name=? ";
+		    String query="update booking_detail set booking_status=? where booking_id=? ";
 
 		try {
 			Connection con = Connectionmv4.DBConnection();
@@ -102,7 +105,7 @@ public class BookingDaoImpl {
 			  return rs;
 			  
 		  }
-		    
+//BookingHistory Admin		    
 		  public List<Bookingdetail> showBooking() throws ClassNotFoundException, SQLException {
 			  List<Bookingdetail> booking=new ArrayList<Bookingdetail>();
 	           Bookingdetail mvtheatre1=null;
@@ -113,25 +116,29 @@ public class BookingDaoImpl {
 	           Statement stmt=con.createStatement();
 		       ResultSet rs=stmt.executeQuery(showQuery);
 		       while(rs.next()) {
-              mvtheatre1=new  Bookingdetail(rs.getInt(1),rs.getInt(2),rs.getInt(3),rs.getInt(4),rs.getInt(5),rs.getString(6),rs.getString(7),rs.getDate(8));
-//			   System.out.println(rs.getString(3));
-              booking.add(mvtheatre1);
+               mvtheatre1=new  Bookingdetail(rs.getInt(1),rs.getInt(2),rs.getInt(3),rs.getInt(4),rs.getInt(5),rs.getString(6),rs.getString(7),rs.getDate(8));
+               booking.add(mvtheatre1);
 	  
 		        }
 		       return booking;
 			
 		  }
-		  public void book(Bookingdetail booking) {
+		  public void book(int booking,String status) {
 				String query="Update booking_detail set booking_status=? where booking_id=? ";
 				Connection con;
 				
 					try {
 						con = Connectionmv4.DBConnection();
 						PreparedStatement Pstmt1 = con.prepareStatement(query);
+					//	System.out.println(booking.getBooking_status()+ "aaaa");
+					//	System.out.println(booking.getBooking_id() + "bbbbb");
 						
-						Pstmt1.setString(1,booking.getBooking_status() );
-						Pstmt1.setInt(2,booking.getBooking_id());
+						
+						Pstmt1.setString(1,status );
+						Pstmt1.setInt(2,booking);
 						int i = Pstmt1.executeUpdate();
+						System.out.println( "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+						
 					} catch (ClassNotFoundException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -144,10 +151,9 @@ public class BookingDaoImpl {
 				}
 			
 			
-//
-//			
+//Booking			
 		  public ResultSet getbookingidanddate(int thid,int userid) throws ClassNotFoundException, SQLException {
-			  String query="select * from booking_detail where theatre_id =? and user_id=?";
+			  String query="select * from booking_detail where theatre_id =? and user_id=? order by booking_id desc";
 			  ResultSet rs=null;
 			  Connection	con = Connectionmv4.DBConnection();
 			  PreparedStatement pstmt = con.prepareStatement(query);
@@ -156,6 +162,25 @@ public class BookingDaoImpl {
 			  rs=pstmt.executeQuery();
 			  return rs;
 		  }
+//mybooking		  
+		  public List<Bookingdetail> MyBooking(int userId) throws ClassNotFoundException, SQLException {
+			  List<Bookingdetail> bookinglist=new ArrayList<Bookingdetail>();
+	           Bookingdetail mvtheatre1=null;
+		
+		       String showQuery="select * from booking_detail where user_id='"+userId+"'";
+		       Connectionmv4 connection =new Connectionmv4();
+		       Connection con=connection.DBConnection();
+	           Statement stmt=con.createStatement();
+		       ResultSet rs=stmt.executeQuery(showQuery);
+		       while(rs.next()) {
+              mvtheatre1=new  Bookingdetail(rs.getInt(1),rs.getInt(2),rs.getInt(3),rs.getInt(4),rs.getInt(5),rs.getString(6),rs.getString(7),rs.getDate(8));
+//			   System.out.println(rs.getString(3));
+              bookinglist.add(mvtheatre1);
+	  
+		        }
+		       return bookinglist;
+			
+		  } 
 		  
 		  
 			}

@@ -102,13 +102,11 @@ public class Bookingdetail {
 		
 		this.theatre_id = theatre_id;
 	}
-	public Bookingdetail(int bookingid2, BookingDaoImpl bookd2) {
+	
+	public Bookingdetail(int booking,String ticket) {
 		// TODO Auto-generated constructor stub
-	}
-	public Bookingdetail(int bookingid2,String status) {
-		// TODO Auto-generated constructor stub
-		this.booking_id=bookingid2;
-		this.booking_status=status;
+		this.booking_id=booking;
+		this.booking_status=ticket;
 		
 	}
 	public Bookingdetail(int Booking_id,int user_id, int theatre_id, int no_seat, int total_amount,String Booking_status,String movie_name,Date Booking_date) {
@@ -122,12 +120,13 @@ public class Bookingdetail {
 		this.movie_name=movie_name;
 		this.Booking_date=Booking_date;
 	}
-	public Bookingdetail(String mvname , String ticket) {
-		// TODO Auto-generated constructor stub
-		this.movie_name=mvname;
-		this.booking_status=ticket;
-	}
-	
+//	public Bookingdetail(int booking1, String ticket1) {
+//		// TODO Auto-generated constructor stub
+//		
+//		this.booking_id=booking1;
+//		this.booking_status=ticket1;
+//	}
+
 	
 }
 

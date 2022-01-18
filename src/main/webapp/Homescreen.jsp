@@ -36,6 +36,13 @@
   text-decoration:none;
   color:red;
 }
+.topnav3
+{
+  position:absolute;
+  top:10px;
+  left:950px;
+  text-decoration:none;
+  color:red;
 
 }
  </style>
@@ -50,5 +57,16 @@
     <div class="topnav2">     
         <a href="Login1.jsp"><button type="button" class="btn btn-primary">Login page</button></a>
      </div> 
+     
+        </div>
+    <div class="topnav3">     
+        <a href="About Us.jsp"><button type="button" class="btn btn-primary">AboutUs</button></a>
+     </div> 
+     
+     
+     
+     
+     
+     
 </body>
 </head>

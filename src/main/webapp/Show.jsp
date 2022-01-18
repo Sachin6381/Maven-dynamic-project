@@ -56,8 +56,28 @@ visibility:hidden;
   text-decoration:none;
   color:white;
 }
+.contact{
 
+  position:absolute;
+  top:1px;
+  left:1000px;
+  text-decoration:none;
+  color:white;
 
+}
+.contact1{
+
+  position:absolute;
+  top:1px;
+  left:1100px;
+  text-decoration:none;
+  color:white;
+
+}
+
+h1{
+color:white;
+}
 
 
 .movie
@@ -124,12 +144,24 @@ li a:hover:not(.active) {
    <li><a href="News.jsp">News</a></li>
    <li><a href="UserProfile.jsp">Profile</a></li>
    <li><a href="Wallet.jsp">Recharge Wallet</a></li>
+    <li><a href="MyBooking.jsp">My Bookings</a></li>
    </div>
    
    <div class="log">
    
    <li><a href="Login1.jsp">Logout</a></li>
    </div>
+   
+   <div class="contact">
+   
+    <li><a href="About Us.jsp">About Us</a></li>
+   </div>
+   
+     <div class="contact1">
+   
+    <li><a href="Contact Us.jsp">Contact Us</a></li>
+   </div>
+   
   
     
 </ul>
@@ -187,6 +219,6 @@ showmovie = movieDaoImpl.showMovie();
                                     </tbody>
                                    </table>
                                    
-                                   <a href="SearchMovie.jsp" class="searchbtn">Search Movie</a>
+                                   <a href="SearchMovie.jsp" class="searchbtn" class="glyphicon glyphicon-search"> Search Movie</a>
 </body>
 </html>

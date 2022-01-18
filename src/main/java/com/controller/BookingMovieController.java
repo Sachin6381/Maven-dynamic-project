@@ -42,7 +42,23 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 	     
 
 	     String mvname=movieDaoImpl.movie(movie);
-	     try {
+	    
+	     session.setAttribute("moviefortoday", mvname);
+	     int totalprice = 180 * seat;
+	     session.setAttribute("totalprice",totalprice);
+
+	  //   System.out.println(""+userid +mvid+thid+seat+mvname+totalprice + "");
+	     
+	     
+	       
+
+	     BookingDaoImpl bookingDaoImpl = new BookingDaoImpl();
+	     Bookingdetail bookingdetail = new Bookingdetail(userid,thid,seat,totalprice,mvname);
+
+	    bookingDaoImpl.insert(bookingdetail);
+	    
+	//    System.out.println("pothi");
+	    try {
 			ResultSet rs= bdi.getbookingidanddate(thid,userid);
 			
 
@@ -56,21 +72,7 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-	     session.setAttribute("moviefortoday", mvname);
-	     int totalprice = 180 * seat;
-	     session.setAttribute("totalprice",totalprice);
-
-	     System.out.println(""+userid +mvid+thid+seat+mvname+totalprice + "");
-	     
-	     
-	       
-
-	     BookingDaoImpl bookingDaoImpl = new BookingDaoImpl();
-	     Bookingdetail bookingdetail = new Bookingdetail(userid,thid,seat,totalprice,mvname);
-
-	    bookingDaoImpl.insert(bookingdetail);
 	    
-	    System.out.println("pothi");
 	    
 	    User users=new User(userid,totalprice); 
 	    

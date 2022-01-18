@@ -92,7 +92,25 @@ public class TheatreDaoImpl {
 		}
         
 	}
-	
+	public void seatupdate(int seat , int thid) {
+		String query="update theatre set number_seats= number_seats+? where Theatre_id=? ";
+		 Connection con;
+		try {
+			 con = Connectionmv4.DBConnection();
+			 PreparedStatement pstmt = con.prepareStatement(query);
+			  System.out.println("seatupdate");
+			 pstmt.setInt(1, seat);
+			  pstmt.setInt(2, thid);
+			 int i = pstmt.executeUpdate();
+			
+		     System.out.println(i+"rows update successfully");
+		} 
+		catch (Exception e) {
+			System.out.println(e);
+		}	
+        
+	}
+
 
 	public void update(Theatreinformation theatre2 ) {
 		
@@ -212,7 +230,9 @@ public void updateseat(int seat,int thid) {
 	
     
     
-    String query="update theatre set number_seats=? where  theatre_id=? ";
+    String query="update theatre set number_seats= ? where  theatre_id=? ";
+    
+    System.out.println("ckvcghcdghczghcghzcx");
 
 try {
     Connection	con = Connectionmv4.DBConnection();

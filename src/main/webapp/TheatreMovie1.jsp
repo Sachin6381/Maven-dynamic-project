@@ -10,6 +10,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Movie Booking</title>
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <!-- jQuery library -->
@@ -17,6 +18,7 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 <style>
 body{
 	font-weight: bold;
@@ -28,7 +30,8 @@ position:absolute;
 top:-100px;
 left:10px;	
 }
-.movies{
+h1{
+color:white;
 
 }
 span{
@@ -59,12 +62,13 @@ position: relative;left:200px;
   background-repeat: no-repeat;
   background-size:cover;
 }
-<style>
+
 img{
 top:20px
 width: 280px;
 padding:20px;
 }
+
 span{
 position : relative;
 top:240px;
@@ -83,15 +87,27 @@ visibility:hidden;
   text-decoration:none;
   color:white;
 }
-.log
+.log1
 {
   position:absolute;
-  top:1px;
+  top:90px;
+  left:1200px;
+  text-decoration:none;
+  color:white;
+}
+.log1
+{
+  position:absolute;
+  top:70px;
   left:1200px;
   text-decoration:none;
   color:white;
 }
 
+.class{
+margin-left:1200px;
+
+}
 
 .movie
 {
@@ -99,6 +115,13 @@ visibility:hidden;
   position:relative;
   right:50px;
 }
+
+.top{
+  list-style-type: none;
+
+
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -139,24 +162,39 @@ html,body{
      position: absolute;  
      width: 100%;
 }
+
+
 </style>
-	
 </head>
 </body>
+
+
 <body>
 <ul>
- <div class="top">
-   <li><a class="active" href="#home">Home</a></li>
+
+<div class="top">
+   <li><a  class="active" href="Show.jsp">Home</a></li>
    <li><a href="News.jsp">News</a></li>
    <li><a href="UserProfile.jsp">Profile</a></li>
    <li><a href="Wallet.jsp">Recharge Wallet</a></li>
-    <li><a href="Show.jsp">Movie List</a></li>
-   </div> 
+   <li><a href="Show.jsp">Movie List</a></li>
+   <li><a href="MyBooking.jsp">My Bookings</a></li>
+   <li><a href="CancelBooking.jsp">Cancel Booking</a></li>
+    
    <div class="log">
    
-        <li><a href="Login1.jsp">Logout</a></li>
+   <li><a href="Login1.jsp">Logout</a></li>
    
    </div>
+   
+   
+   
+     <div class="class">
+   
+   <button type="submit" ><a href="Show.jsp" class="btn btn-primary">Back</a></button>  
+   
+     </div>
+  
   
     
 </ul>
@@ -183,7 +221,7 @@ showtheatre = theatreDaoImpl.showtheatre(id);
                                  <tr>
                                  <h1><b>Movie Theatre</b></h1>
                                  <%int count=0;
-                                   for(Theatreinformation theatreinformation: showtheatre){
+                                 for(Theatreinformation theatreinformation: showtheatre){
                            	%>
                                    <td>
                                    <table id="theatretable">
@@ -205,22 +243,22 @@ showtheatre = theatreDaoImpl.showtheatre(id);
                                          
                               <span><button type="button" class="btn btn-light"> Theatre name: <%=theatreinformation.getTheatre_name() %> </button></span><br>
                                         <span style="visibility:hidden"> Movie id:<%=theatreinformation.getMovie_id() %>  </span>
-                                        <% System.out.println(theatreinformation.getTheatre_id());%>
+                                       <% System.out.println(theatreinformation.getTheatre_id());%>
                                         <span style="visibility:hidden"> Theatre id: <%=theatreinformation.getTheatre_id()%></button> </span><br>
                               <span><button type="button" class="btn btn-light">Available Number seats:<%=theatreinformation.getNumber_seats() %> </button></span><br><br>
                               <span><button type="button" class="btn btn-light">Theatre Address:<%=theatreinformation.getTheatre_address() %></button></span><br><br>
                               <span><button type="button" class="btn btn-light">Theatre Ratings:<%=theatreinformation.getTheatre_rating() %></button></span><br><br>
-                               <span><button type="button" class="btn btn-light">price:<%=theatreinformation.getPrice() %></button></span><br><br>
-                               <span><button type="button" class="btn btn-light">Movie date and Time:<%=theatreinformation.getMovie_date_time() %></button></span><br><br>
+                              <span><button type="button" class="btn btn-light">price:<%=theatreinformation.getPrice() %></button></span><br><br>
+                              <span><button type="button" class="btn btn-light">Movie date and Time:<%=theatreinformation.getMovie_date_time() %></button></span><br><br>
                                          
                                         
-                                        <% session.setAttribute("movieid", theatreinformation.getMovie_id());%>
+                                 <% session.setAttribute("movieid", theatreinformation.getMovie_id());%>
                                           
-                                     <% session.setAttribute("theaterid", theatreinformation.getTheatre_id()); %>
-                                     <%session.setAttribute("moviedate", theatreinformation.getMovie_date_time()); %>
-                                     <span><a href="Booking.jsp?movieid=<%=theatreinformation.getMovie_id()%>&theatreid=<%=theatreinformation.getTheatre_id()%>" >
+                                 <% session.setAttribute("theaterid", theatreinformation.getTheatre_id()); %>
+                                 <%session.setAttribute("moviedate", theatreinformation.getMovie_date_time()); %>
+                                 <span><a href="Booking.jsp?movieid=<%=theatreinformation.getMovie_id()%>&theatreid=<%=theatreinformation.getTheatre_id()%>" >
                                     
-                                     <button type="button" class="btn btn-primary">Book Ticket</button>
+                                  <button type="button" class="btn btn-primary">Booking Ticket</button>
                                         
                                      
                                    </td>

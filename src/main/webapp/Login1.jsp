@@ -14,10 +14,8 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+<style>
 
-
-
- <style>
     body  
 {  
     margin:.150px;  
@@ -60,12 +58,12 @@ label{
     padding-left:8px;  
       
 }  
-#Sign{  
+.Sign{  
     width:250px;  
     height:30px;  
     border:none;  
     border-radius:17px;  
-    padding-left:8px;  
+    padding-left:3px;  
     color:blue;  
   
   
@@ -83,25 +81,34 @@ a{
 }
 
 </style>
-
-
 </head>
 <body>
- <h1>Login page</h1> 
- <form action="login1" method="get">
+    
+    
+      <h1>Login page</h1> 
+      <form action="login1" method="get">
  
-     <div class="login"> 
+      <div class="login"> 
        
-        <label for ="Email">Email Id</label><br>    
-        <input type="email" name="Email" id="Email" placeholder="Email-Id" required><br><br>  
+          <label for ="Email">Email Id</label><br>    
+          <input type="email" name="Email" id="Email" placeholder="Email-Id" required><br><br>  
 
-        <label for="Password">Password</label><br>    
-        <input type="password" name="Pass" id="Pass" placeholder="Password" required><br><br> 
+          <label for="Password">Password</label><br>    
+          <input type="password" name="Pass" id="Pass" placeholder="Password" required><br><br> 
 
-       <button type="submit"  class="btn btn-primary" >Submit</button>
+          <button type="submit"  class="btn btn-primary" >Submit</button>
        
-       <a href="ForgetPassword.jsp" class="btn btn-primary" >forget password</button>
+          <a href="ForgetPassword.jsp" class="btn btn-primary" >Forgot password</button><br>
+          
+          
+          
+          
+          
+          </div>
+          
+          
+     
+          
        </form> 
-</div>
 </body>
 </html>

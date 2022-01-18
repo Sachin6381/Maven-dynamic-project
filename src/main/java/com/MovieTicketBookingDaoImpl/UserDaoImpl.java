@@ -183,6 +183,49 @@ public class UserDaoImpl {
 		}
 		
 	}
+	
+	
+	
+	
+	public void Refundwallet(int userid, int totalprice) {
+		String query = "update user_details set wallet=wallet + ? where user_id = ?";
+
+		
+//		public void Refundwallet(int  user, int totalprice) {
+
+		
+		
+		try {
+			Connection con = Connectionmv4.DBConnection();
+			PreparedStatement Pstmt1 = con.prepareStatement(query);
+			
+			System.out.println("vdnkvgvdhjvdgfdgsjvcdsghdcv come insideee");
+			Pstmt1.setInt(1, totalprice);
+           Pstmt1.setInt(2, userid);
+			
+			int i=Pstmt1.executeUpdate();
+			
+			System.out.println("Row Up[dated"+i);
+			System.out.println("wallet reduce");
+//			ResultSet rs = Pstmt1.executeQuery();
+//			while (rs.next()) {
+//				System.out.println(rs.getInt(1));
+//				return rs.getInt(1);
+//			}
+
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+	
+
+
 
 //update wallet:
 	public int updatewallet(User user) {
@@ -208,6 +251,8 @@ public class UserDaoImpl {
 		}
 		return -1;
 	}
+	
+	
 	public List<User> showUser() throws ClassNotFoundException, SQLException {
 		
 		List<User> userList=new ArrayList<User>();

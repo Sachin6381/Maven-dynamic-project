@@ -8,13 +8,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
 <style>
 
 
@@ -26,6 +23,15 @@ html,body{
      width: 100%;
      color:white;
 }
+ .log1
+{
+  position:absolute;
+  top:90px;
+  left:1200px;
+  text-decoration:none;
+  color:white;
+}  
+   
    
 .one
 {
@@ -43,7 +49,7 @@ img
 {
  width:600px;
  position:absolute;
- top:150px;
+ top:120px;
  left:-500px;
 }
 
@@ -91,6 +97,11 @@ li a:hover:not(.active) {
 	position: relative;
 	top: 200px;
 }
+input[type:number]
+{
+   background:black;
+}
+
 
 </style>  
 </head>
@@ -100,16 +111,26 @@ li a:hover:not(.active) {
 
 
      <div class="top">
+     
    <li><a class="active" href="Show.jsp">Home</a></li>
    <li><a href="News.jsp">News</a></li>
    <li><a href="UserProfile.jsp">Profile</a></li>
    <li><a href="Wallet.jsp">Recharge Wallet</a></li>
+    <li><a href="MyBooking.jsp">MyBooking</a></li>
+    <li><a href="CancelBooking.jsp">Cancel Booking</a></li>
    </div>
    
    <div class="log">
    
    <li><a href="Login1.jsp">Logout</a></li>
    </div>
+   
+   <div class="log1">
+   
+   <button type="submit" ><a href="TheatreMovie1.jsp" class="btn btn-primary">Back</a></button>  
+   
+   </div>
+  
   
     
 </ul>
@@ -168,14 +189,16 @@ for(Theatreinformation theatre: movieList){
         <input type="number" name="theatre" id="theatre" value= "<%=thid %>" readonly="readonly"><br><br>
         <label for ="Number of seats">Choose number of seats</label><br>    
         <input type="Number" name="Seats" id="Seats" min=1><br><br>
-        <button type="button"  class="btn btn-primary" >Book Ticket</button>
+        <button type="submit"   >Book Ticket</button>
+       <a href="BookingSuccess.jsp" ></a>
         <button><a href ="Show.jsp">Cancel Booking</a></button>
         
-        </div>
+        
               
         
          
 </form>
+</div>
 </div>
 </body>
 </html>
