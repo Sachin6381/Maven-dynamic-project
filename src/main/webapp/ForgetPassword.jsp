@@ -32,16 +32,18 @@ body {
   background-repeat: no-repeat;
   background-size:cover;
 }
-
-          
+    
   
 </style>
 </head>
 <body>
 
+<marquee><b>Update Your Pssword</b></marquee>
+
 <div class="one">
 
-   <p><b>Change your Password</b></p>
+  
+    <p><b>Change your Password</b></p>
  <form action="Forget" method="post">
  <label>Enter your Email:</label><br>
  <input type="text" name="forget" id="forget"><br><br>

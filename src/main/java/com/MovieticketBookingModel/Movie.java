@@ -122,7 +122,7 @@ public class Movie {
 		this.Movie_name=name;
 	}
 	public Movie(String moviename, int movieid, String movietype, int movieratings, int movieduration, String director2,
-			String musicdirector, String heroname) {
+			String musicdirector, String heroname,String images2) {
 		// TODO Auto-generated constructor stub
 	 this.	Movie_name = moviename;
 	this.	Movie_id = movieid;
@@ -132,6 +132,7 @@ public class Movie {
 		this.director = director2;
 		this.music_director = musicdirector;
 		this.hero_name = heroname;
+		this.images=images2;
 	}
 	public Movie(String moviename, String movietype, int movieduration, int movieid) {
 		
@@ -145,6 +146,7 @@ public class Movie {
 			String string6, String string7) {
 		// TODO Auto-generated constructor stub
 	}
+	
 	@Override
 	public String toString() {
 		return "Movie \nMovie_name=" + Movie_name + "\n Movie_id=" + Movie_id + "\n Movie_type=" + Movie_type

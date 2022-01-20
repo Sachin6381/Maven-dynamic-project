@@ -13,6 +13,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
+
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <!-- jQuery library -->
@@ -44,9 +47,10 @@ visibility:hidden;
 {
   position:absolute;
   top:15px;
-  left:650px;
+  left:600px;
   text-decoration:none;
   color:white;
+  text-decoration: none;
 }
 .log
 {
@@ -113,6 +117,7 @@ li a {
 
 li a:hover:not(.active) {
   background-color: #111;
+    text-decoration: none;
 }
 
 .active {
@@ -131,13 +136,18 @@ li a:hover:not(.active) {
 	top: 200px;
 }
 
+table td{
+padding-bottom:120px;
+
+} 
+
 </style>
 
 </head>
 </body>
 <body>
 <ul>
-
+<!-- -- 1300px 1500px ---->
 
      <div class="top">
    <li><a class="active" href="Show.jsp">Home</a></li>
@@ -145,6 +155,7 @@ li a:hover:not(.active) {
    <li><a href="UserProfile.jsp">Profile</a></li>
    <li><a href="Wallet.jsp">Recharge Wallet</a></li>
     <li><a href="MyBooking.jsp">My Bookings</a></li>
+
    </div>
    
    <div class="log">
@@ -177,6 +188,17 @@ showmovie = movieDaoImpl.showMovie();
                                         <tbody>
                                         <tr>
                                         <h1></b>Movie List</h1><b>
+                                        
+                                       <div class="searchbtn">
+                                        <form action="Search" method = "post">
+
+                                          <input type="text" name="moviename" id="moviename">
+ 
+                                         <input type="submit" class="btn btn-primary" value="Search">
+                                         </div>
+                                         </form>
+                                        
+                                        
                                         <%int count=0;
                                         for(Movie movie: showmovie){
                                       	%>
@@ -184,7 +206,10 @@ showmovie = movieDaoImpl.showMovie();
                                         <table id="movietable">
                                         <tbody>
                                          <tr>
-                                        <td><img src=<%=movie.getImages()%> alt="sachin"></td>    
+                                         <td> <img src="images/<%=movie.getImages()%>" width=100px alt="img"></td> 
+                                         
+                                         
+                                         
                                         <td class="movie">
                                         
                                         <span id="movie name">Movie name: <%=movie.getMovie_name() %> </span><br>
@@ -218,7 +243,9 @@ showmovie = movieDaoImpl.showMovie();
                                      </tr>
                                     </tbody>
                                    </table>
+                                   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
                                    
-                                   <a href="SearchMovie.jsp" class="searchbtn" class="glyphicon glyphicon-search"> Search Movie</a>
+                                 
 </body>
 </html>

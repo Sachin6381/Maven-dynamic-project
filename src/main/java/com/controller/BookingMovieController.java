@@ -31,6 +31,7 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 	HttpSession session = req.getSession();
 	     int userid=(int)session.getAttribute("userid");
 	     String mvname1=(String)session.getAttribute("moviename");
+	     
 //	     System.out.println("session issue "+userid);
 	     int mvid=Integer.parseInt(req.getParameter("Movie"));
 	     int thid=Integer.parseInt(req.getParameter("theatre"));
@@ -64,7 +65,7 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 
 			session.setAttribute("ResultSet", rs);
 			session.setAttribute("bookingdate", rs.getDate(8));
-			System.out.println(rs.getInt(1)+""+rs.getDate(8));
+		//	System.out.println(rs.getInt(1)+""+rs.getDate(8));
 		} catch (ClassNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -76,12 +77,18 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 	    
 	    User users=new User(userid,totalprice); 
 	    
-	    System.out.println(users);
+	  //  System.out.println(users);
 	    UserDaoImpl dao1=new UserDaoImpl();
 	    
 	      dao1.getwallet(users);
-
-	    
+//low	      
+//	      UserDaoImpl dao2=new UserDaoImpl();
+//        int wallet=dao2.walletbalance(userid);
+//        
+//        if(dao1.getwallet(users)>totalprice) {
+//        	
+//        }
+//	    
 	    
 	    
 	    com.MovieticketBookingModel.Theatreinformation theatreinformation = new com.MovieticketBookingModel.Theatreinformation(thid, mvname);

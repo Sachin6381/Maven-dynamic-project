@@ -6,30 +6,24 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <style>
 
     body  
 {  
     margin:.150px;  
-    padding:0;  
+    padding:12px;  
     background-color:#6abadeba;  
     font-family:'Arial';  
 }  
 .login{  
         
-        width:350px;  
+        width:300px;  
         overflow:hidden;  
         margin:auto;  
         margin:20 0 0 450px;  
-        padding:30px;  
+        padding:40px;  
         background:#23463f;  
         border-radius:15px ;  
           
@@ -44,35 +38,61 @@ label{
     font-size:17px;  
 }  
 #Email{  
-    width:250px;  
+    width:223px;  
     height:30px;  
     border:none;  
     border-radius:3px;  
     padding-left:8px;  
 }  
 #Pass{  
-    width:250px;  
+    width:223px;  
     height:30px;  
     border:none;  
     border-radius:3px;  
     padding-left:8px;  
       
 }  
-.Sign{  
+p{
     width:250px;  
-    height:30px;  
+    height:10px;  
     border:none;  
-    border-radius:17px;  
-    padding-left:3px;  
-    color:blue;  
+    border-radius:3px;  
+    padding-left:0px;  
+    color:white;
+      
+
+} 
   
-  
-}  
+button a{
+text-decoration:none;
+
+}
+.button1{
+padding:5px;
+margin-right:50px;
+text-decoration:none;
+
+}
+.button2{
+padding:6px;
+margin-right:50px;
+color:block;
+background-color:white;
+border-radius:4px;
+text-decoration:none;
+
+}
+    
 a{  
     float: right;  
-    background-color: grey;  
-    padding-left: 10px;
+    padding-left: 2px;
+    text-decoration:none;
+    color:white;
 }  
+
+p{
+ color:white;
+}
 
  body {
   background-image: url('web_4.jpg');
@@ -85,7 +105,8 @@ a{
 <body>
     
     
-      <h1>Login page</h1> 
+      <h1>Login</h1> 
+      
       <form action="login1" method="get">
  
       <div class="login"> 
@@ -96,12 +117,12 @@ a{
           <label for="Password">Password</label><br>    
           <input type="password" name="Pass" id="Pass" placeholder="Password" required><br><br> 
 
-          <button type="submit"  class="btn btn-primary" >Submit</button>
+          <button type="submit" class="button1">Submit</button>
        
-          <a href="ForgetPassword.jsp" class="btn btn-primary" >Forgot password</button><br>
+         <a href= "ForgetPassword.jsp">Forgot password</a><br>
           
           
-          
+          <p>Don't have an account<a href="Register.jsp">Sign up</a></p>
           
           
           </div>

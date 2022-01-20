@@ -26,8 +26,12 @@ public class AdminAddMovie extends HttpServlet {
 		String director=request.getParameter("Director");
 		String musicdirector=request.getParameter("Music director");
 		String heroname=request.getParameter("Hero name");
+		String images=request.getParameter("images");
+		String movie=request.getParameter("number");
 		
-		Movie add=new Movie(moviename, movieid,movietype,movieratings,movieduration,director,musicdirector, heroname);
+		System.out.println(images);
+		
+		Movie add=new Movie(moviename, movieid,movietype,movieratings,movieduration,director,musicdirector, heroname,images,movie);
 		MovieDaoImpl addmovie=new MovieDaoImpl();
 		addmovie.insert(add);
 		response.sendRedirect("Addmovie.jsp");

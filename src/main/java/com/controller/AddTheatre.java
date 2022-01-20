@@ -27,7 +27,7 @@ public class AddTheatre extends HttpServlet {
 		//doGet(request, response);
 		HttpSession session=request.getSession();
 		DateTimeFormatter formatter =
-	    DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+	    DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
 		String theatrename=request.getParameter("theatrename");
 		System.out.println(theatrename);
 		int movieid=Integer.parseInt(request.getParameter("movieid"));
@@ -45,9 +45,10 @@ public class AddTheatre extends HttpServlet {
 	    int price=Integer.parseInt(request.getParameter("Price"));
 		System.out.println(price);
 	    LocalDateTime mvTimeDate = LocalDateTime.parse(theatreDate);
+	    String images=request.getParameter("images");
 		System.out.println(mvTimeDate);
 		
-		Theatreinformation dao=new Theatreinformation(theatrename,movieid,numberseats,theatreaddress,theatreratings,price,mvTimeDate );
+		Theatreinformation dao=new Theatreinformation(theatrename,movieid,numberseats,theatreaddress,theatreratings,price,mvTimeDate,images );
 		TheatreDaoImpl theatre1=new TheatreDaoImpl();
 	    theatre1.insert(dao);
 	    

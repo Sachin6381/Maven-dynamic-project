@@ -32,14 +32,19 @@ margin-left:550px;
 border:4px solid black;
 top:90px;
 padding:20px;
+color:Block;
 }
 
+.h2{
+color:white;
+
+}
 .ones{
   position:absolute;
   top:50px;
   left:1250px;
   text-decoration:none;
-  color:white
+  color:Block;
 
 }
 
@@ -96,7 +101,7 @@ padding:20px;
                                         <span>Email ID: <%=user1.getEmail_id()%> </span><br>
                                         <span>Mobile number: <%=user1.getMobile_num()%></span><br>
                                          <span>Password:<%= user1.getE_password() %></span><br>
-                                         <span>Wallet : <%=user1.getwallet()%> </span><br>
+                                         <span>Wallet Amount: <%=user1.getwallet()%> </span><br>
                                           
                                            </div> 
                                            

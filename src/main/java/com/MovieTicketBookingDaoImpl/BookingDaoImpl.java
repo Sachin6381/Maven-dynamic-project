@@ -35,7 +35,7 @@ public class BookingDaoImpl {
 				
 				boolean flag = Pstmt1.executeUpdate()>0;
 				if(flag) {
-				Mailer.send("sachinraj6878@gmail.com", "Sachinraj@089", "karthikmarieswaran6477@gmail.com", "Movie Booking", "Your Ticket Booking Confirmed");
+				Mailer.send("sachinraj6878@gmail.com", "Sachinraj@089", "sachin64979@gmail.com", "Movie Booking", "Your Ticket Booking Confirmed");
 				}
 				//System.out.println("Booking Success");
 			} catch (ClassNotFoundException e) {

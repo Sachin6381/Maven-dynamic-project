@@ -253,6 +253,30 @@ public class UserDaoImpl {
 	}
 	
 	
+	//low wallet:
+		public int walletbalance(int userid) {
+			String query = "Select Wallet from user_detrails where user_id = ?";
+
+			try {
+				Connection con = Connectionmv4.DBConnection();
+				PreparedStatement Pstmt1 = con.prepareStatement(query);
+				Pstmt1.setInt(1, userid);
+				
+
+				ResultSet rs = Pstmt1.executeQuery();
+
+				return rs.getInt(1);
+
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return -1;
+		}
+	
 	public List<User> showUser() throws ClassNotFoundException, SQLException {
 		
 		List<User> userList=new ArrayList<User>();

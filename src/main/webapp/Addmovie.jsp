@@ -20,15 +20,18 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #333;
+  text-decoration: none;
 }
 
 li {
   float: left;
   border-right:1px solid #bbb;
+    text-decoration: none;
 }
 
 li:last-child {
   border-right: none;
+    text-decoration: none;
 }
 
 li a {
@@ -52,6 +55,7 @@ li a:hover:not(.active) {
   left:50px;
   text-decoration:none;
   color:white;
+   text-decoration: none;
 }
 .one{
   position:absolute;
@@ -59,6 +63,7 @@ li a:hover:not(.active) {
   left:600px;
   text-decoration:none;
   color:white;
+   text-decoration: none; 
 }
 .ones{
   position:absolute;
@@ -66,6 +71,7 @@ li a:hover:not(.active) {
   left:1100px;
   text-decoration:none;
   color:white;
+  text-decoration: none;
 }
  body {
   background-image: url('Rohini Sliver Screen.jpg');
@@ -81,8 +87,8 @@ li a:hover:not(.active) {
 <ul>
   <li><a class="active" href="#home">Home</a></li>
   <li><a href="News.jsp">News</a></li>
-  <li><a href="Show.jsp">ShowMovie</a>
   <li><a href="AddTheatre.jsp">AddTheatre</a></li>
+    <li><a href="Show.jsp">ShowMovie</a>
   <li><a href="UserdetailHistory.jsp">UserList</a>
   <li><a href="BookingHistory.jsp">BookingList</a>
   <li><a href="Login1.jsp">logout</a></li>
@@ -116,6 +122,11 @@ li a:hover:not(.active) {
     <input type="text" name="Music director"><br><br>
     <label>Enter your Hero name:</label><br>
     <input type="text" name="Hero name"><br><br>
+    <label>Enter your Image:</label><br>
+    <input type="file" name="images"><br><br>
+     <label>Enter your Number:</label><br>
+    <input type="text" name="number"><br><br>
+    
     <button type="submit" class="btn btn-primary" >Add movie</button>
     
     </form>

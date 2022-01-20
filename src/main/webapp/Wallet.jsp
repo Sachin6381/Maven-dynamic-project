@@ -51,7 +51,7 @@ background:FAEBD7;
      <form  action="Wallet" method="post">
      
      Enter your Amount:<br>
-     <input type="number" name="amount" id="number" min=0><br><br>
+     <input type="number" name="amount" id="number" min=1><br><br>
      Enter your Email id:<br>
      <input type="email" name="email" id="email"><br><br>
      

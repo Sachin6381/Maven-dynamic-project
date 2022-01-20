@@ -17,7 +17,7 @@ public class MovieDaoImpl {
 	 private static final String Movie = null;
 
 	public void insert(Movie Movie )  {
-	           String  query="insert into Movie(Movie_name,Movie_id,Movie_type,movie_ratings,movie_duration,director,music_director,hero_name) values (?,?,?,?,?,?,?,?)";
+	           String  query="insert into Movie(Movie_name,Movie_id,Movie_type,movie_ratings,movie_duration,director,music_director,hero_name,images,movielink) values (?,?,?,?,?,?,?,?,?,?)";
 			    Connection con;
 		try {
 				con = Connectionmv4.DBConnection();
@@ -30,6 +30,8 @@ public class MovieDaoImpl {
 				pstmt.setString(6, Movie.getDirector());
 				pstmt.setString(7, Movie.getMusic_director());
 				pstmt.setString(8, Movie.getHero_name());
+				pstmt.setString(9, Movie.getImages());
+				pstmt.setString(10, Movie.getMovielink());
 				int i = pstmt.executeUpdate();
 				
 				System.out.println(i+"rows inserted successfully");

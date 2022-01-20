@@ -116,6 +116,7 @@ input[type:number]
    <li><a href="News.jsp">News</a></li>
    <li><a href="UserProfile.jsp">Profile</a></li>
    <li><a href="Wallet.jsp">Recharge Wallet</a></li>
+    <li><a href="Show.jsp">Movie List</a></li>
     <li><a href="MyBooking.jsp">MyBooking</a></li>
     <li><a href="CancelBooking.jsp">Cancel Booking</a></li>
    </div>

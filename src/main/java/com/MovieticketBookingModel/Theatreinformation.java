@@ -55,7 +55,7 @@ public class Theatreinformation {
 		this.theatre_rating = theatre_rating;
 		this.price = price;
 		this.movie_date_time = movie_date_time;
-		
+		this.images=images;
 	}
 	@Override
 	public int hashCode() {
@@ -136,9 +136,9 @@ public class Theatreinformation {
 		this.theatre_name=theatrename1;
 		this.theatre_id=theatreid1;
 	}
-	public Theatreinformation(int theatreid21) {
+	public Theatreinformation(int theatreid) {
 		// TODO Auto-generated constructor stub
-		this.theatre_id=theatreid21;
+		this.theatre_id=theatreid;
 	}
 
 

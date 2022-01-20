@@ -104,10 +104,6 @@ visibility:hidden;
   color:white;
 }
 
-.class{
-margin-left:1200px;
-
-}
 
 .movie
 {
@@ -118,6 +114,7 @@ margin-left:1200px;
 
 .top{
   list-style-type: none;
+  text-decoration:none;
 
 
 }
@@ -128,6 +125,7 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #333;
+  text-decoration:none;
 }
 
 li {
@@ -137,6 +135,7 @@ li {
 
 li:last-child {
   border-right: none;
+  text-decoration:none;
 }
 
 li a {
@@ -149,6 +148,7 @@ li a {
 
 li a:hover:not(.active) {
   background-color: #111;
+  text-decoration:none;
 }
 
 .active {
@@ -162,6 +162,7 @@ html,body{
      position: absolute;  
      width: 100%;
 }
+
 
 
 </style>
@@ -189,11 +190,7 @@ html,body{
    
    
    
-     <div class="class">
-   
-   <button type="submit" ><a href="Show.jsp" class="btn btn-primary">Back</a></button>  
-   
-     </div>
+     
   
   
     
@@ -229,12 +226,14 @@ showtheatre = theatreDaoImpl.showtheatre(id);
                                    <tr>
                                    
                                    
-                                <!--      <div class="movies">
-                                     <td><img src=<%=theatreinformation.getImages()%> alt="sachin" id="thimg" style="margin-left:40px;margin-top:140px;width:400px;"></td> 
-                                     </div>    -->
+                              
+                                     
+                                   <td><img src="images/<%=theatreinformation.getImages()%>" width=100px alt="img" style="margin-left:100px;margin-top:240px;width:600px;"></td>
+                                      
+                                     
+                                                      
                                      
                                      
-                                       <td><img src="<%=theatreinformation.getTheatre_name()%>.jpg" width=100px alt="img" style="margin-left:100px;margin-top:240px;width:600px;"></td>
                                      
                                 <!--    <img src="https://media-cdn.tripadvisor.com/media/photo-m/1280/14/20/b6/93/screen.jpg" style="margin-left:100px;margin-top:240px;width:600px;">  	--->
                                      

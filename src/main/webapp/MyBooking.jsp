@@ -21,12 +21,12 @@
 <style>
 .one{
 
-color:Block
+color:white
 
 }
 h2
 {
- color:Block;
+ color:white;
 }
 
 .ones{
@@ -38,8 +38,9 @@ h2
 
 }
 
+
  body {
-  background-image: url('web_3.jpg');
+  background-image: url('Rohini Sliver Screen.jpg');
   background-repeat: no-repeat;
   background-size:cover;
 }
@@ -87,13 +88,14 @@ table
                                     
                                     <div class="one">
                                         <span>Booking Id: <%=bookingdetail.getBooking_id()%> </span><br>
-                                        <span>Theatre Id : <%=bookingdetail.getTheatre_id()%>  </span><br>
                                         <span>User Id: <%=bookingdetail.getUser_id()%> </span><br>
                                         <span>Booked seats : <%=bookingdetail.getNo_seat()%> </span><br>
                                         <span>Total Amount : <%=bookingdetail.getTotal_amount()%> </span><br>
                                         <span>Status: <%=bookingdetail.getBooking_status()%></span><br>
                                         <span>Movie Name: <%=bookingdetail.getMovie_name()%></span><br>  
                                         <span>BookingDate : <%=bookingdetail.getBooking_date()%> </span><br> 
+                                        <%String date=session.getAttribute("moviedate").toString(); %>
+                                          Movie date  : <%=date %><br>
                                          </div>   
                                          
                                         

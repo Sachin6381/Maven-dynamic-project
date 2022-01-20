@@ -10,15 +10,34 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+
+
+
 <style >
+button{
+color:white;
+input:block;
+}
 .one
 {
 position:relative;
-margin-left:400px;
+margin-left:500px;
+color:white;
 }
 
  body {
-  background-image: url('web_3.jpg');
+  background-image: url('Rohini Sliver Screen.jpg');
   background-repeat: no-repeat;
   background-size:cover;
 }
@@ -34,48 +53,31 @@ margin-left:400px;
       List<Movie> searchList =(List<Movie>) session.getAttribute("moviename");
       %>
       
-      <table border="2" id="alljobs">
+  
      <h1><b>Search By Movie List:</b></h1>
-<thead>
-<tr>
-<th>movie photos</th>
-<th >Movie Name</th>
-<th>Movie id</th>
-<th>Movie Type</th>
-<th>Duration</th>
-<th>Director</th>
-<th>music Director</th>
-<th>Hero Name</th>
-<th>Book tickets</th>
-</tr>
-</thead>
-<br>
-<br>
-      <tbody>
+
 <%
 
 for (Movie list : searchList) {
 int i=0;
 i++;
 
-System.out.println(list);
+
 %>
 <tr>
-<td><img src="<%=list.getHero_name()%>.jpg" width=100px alt="img"></td>
+<td><img src="images/<%=list.getImages()%>" width=300px alt="img"></td><br><br><br>
 
-<td><%=list.getMovie_name()%></td>
-
-<td><%=list.getMovie_id() %></td>
-<td><%=list.getMovie_type()%></td>
-<td> <%=list.getMovie_duration()%></td>
-<td> <%=list.getDirector()%></td>
-<td> <%=list.getMusic_director() %></td>
-<td> <%=list.getHero_name() %></td>
+<td>Movie Name:<%=list.getMovie_name()%></td><br><br>
+<td>Movie Type:<%=list.getMovie_type()%></td><br><br>
+<td>Movie Duration:<%=list.getMovie_duration()%></td><br><br>
+<td>Director:<%=list.getDirector()%></td><br><br>
+<td>Music Director:<%=list.getMusic_director() %></td><br><br>
+<td>Hero Name:<%=list.getHero_name() %></td><br><br>
 
 
-<td> <a href="TheatreMovie1.jsp">Book</a></td>
+<td>  <button type = "submit" class="btn btn-primary" value="theatre"> <a href="TheatreMovie1.jsp">Theatre</button></a></td>
 
-
+     
 </tr>
 
 <%

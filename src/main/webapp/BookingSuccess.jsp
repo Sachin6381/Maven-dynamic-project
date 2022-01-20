@@ -26,19 +26,13 @@ margin-left:320px;
 html,body{
     background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.6)),url(https://www.vetbossel.in/wp-content/uploads/2020/08/movie-ticketing-768x576.jpg);
      background-repeat: no-repeat;
-     background-size: 100% 700px;
+     background-size: 100% 1000px;
      position: absolute;  
      width: 100%;
      color:white;
 }
    
-.one
-{
-textalign:center;
-position:absolute;
-left:300px;
-top:-50px;
-}
+
 .five
 {
 position:relative;
@@ -140,19 +134,20 @@ ResultSet rs=(ResultSet)session.getAttribute("ResultSet");
 Date bookingdate=(Date) (session.getAttribute("bookingdate"));
 
 %>
-
+     
+      <%int userid=Integer.parseInt(session.getAttribute("userid").toString());
+   
+      %>
   <div class="one">
      
       <table>
+          <h1>Booking Details</h1>
       <%while(rs.next()){ %>
       <tr>
       <td>
 
       
-      <h1>Booking Details</h1>
-      <%int userid=Integer.parseInt(session.getAttribute("userid").toString());
-      System.out.println(userid+"jhjdsjfbd");
-      %>
+  
       User Id: <%=userid %><br>
 <!---  <%int movieid= Integer.parseInt(session.getAttribute("movieid").toString());
 System.out.println(movieid+"Movwheuwh");
@@ -167,14 +162,18 @@ System.out.println(movieid+"Movwheuwh");
 
 
       Movie name:<%=movie_name %><br>
-     <% int theatreid=Integer.parseInt(session.getAttribute("theaterid").toString()); %>
-       Theatre Id : <%=theatreid %><br>
+ <!-- - -->    <% int theatreid=Integer.parseInt(session.getAttribute("theaterid").toString()); %>
+       Theatre Id : <%=theatreid %><br>  ---->
+       
       <%int seatsno=Integer.parseInt(session.getAttribute("Seats").toString()); %>
        Number of Seats  : <%=rs.getInt(4) %><br>
+       
       <%String date=session.getAttribute("moviedate").toString(); %>
        Movie date  : <%=date %><br>
+       
       <%int price=Integer.parseInt(session.getAttribute("totalprice").toString()); %>
       Total Price : <%=price %><br>
+      
        Booking date :<%=rs.getDate(8) %><br><br><br>
     
     <button><a href="Show.jsp">Back</a></button>  

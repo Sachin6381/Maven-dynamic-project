@@ -19,7 +19,7 @@ public class TheatreDaoImpl {
 
 	public void insert(Theatreinformation theatre ) {
 		    System.out.println(theatre.getMovie_date_time());
-	        String  query="insert into theatre(theatre_name, movie_id,number_seats,theatre_address,theatre_rating,price,movie_date_time) values (?,?,?,?,?,?,?)";
+	        String  query="insert into theatre(theatre_name, movie_id,number_seats,theatre_address,theatre_rating,price,movie_date_time,images) values (?,?,?,?,?,?,?,?)";
 			Connection con;
 			try {
 				Connection 	con1 = Connectionmv4.DBConnection();
@@ -32,6 +32,7 @@ public class TheatreDaoImpl {
 			   //ava.sql.Timestamp mvDateTime = java.sql.Timestamp.valueOf(theatre.getMovie_date_time());
 			    Pstmt1.setInt(6,theatre.getPrice());
 			    Pstmt1.setTimestamp(7,java.sql.Timestamp.valueOf(theatre.getMovie_date_time()));
+			    Pstmt1.setString(8,theatre.getImages());
 
 			    
 				int i = Pstmt1.executeUpdate();

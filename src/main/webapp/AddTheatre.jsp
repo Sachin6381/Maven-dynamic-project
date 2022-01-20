@@ -75,11 +75,11 @@ li a:hover:not(.active) {
 <ul>
   <li><a class="active" href="home">Home</a></li>
   <li><a href="News.jsp">News</a></li>
-  <li><a href="Login1.jsp">logout</a></li>
+  <li><a href="Show.jsp">ShowMovie</a>
   <li><a href="UserdetailHistory.jsp">UserList</a>
   <li><a href="BookingHistory.jsp">BookingList</a>
-  
   <li><a href="AddTheatre.jsp">AddTheatre</a></li>
+    <li><a href="Login1.jsp">logout</a></li>
  
 </ul>
 
@@ -95,8 +95,7 @@ li a:hover:not(.active) {
     <input type="text" name="theatrename"><br><br>
     <label>Enter your movie Id:</label> <br>
      <input type="text" name="movieid"><br><br>
-    <label>Enter your Theatre Id:</label><br> 
-    <input type="text" name="theatre Id"><br><br>
+ 
     <label>Enter your Number Seats:</label> <br>
     <input type="text" name="Numberseats"><br><br>
     <label>Enter your Theatre Address:</label> <br>
@@ -106,8 +105,11 @@ li a:hover:not(.active) {
     <label>Enter your Movie date and time:</label> <br>
     <input type="datetime-local" name=" Movie date and time"><br><br>
     <label>Enter your Price:</label> <br>
-    <input type="text" name="Price"><br><br>
+    <input type="Number" name="Price"><br><br>
+    <label>Enter your Image:</label><br>
+    <input type="file" name="images"><br><br>
      <button type="submit">Add Theatre</button><br>
+     
      
    </form>
    </div>
@@ -121,7 +123,7 @@ li a:hover:not(.active) {
     <label>Enter your Theatre Name:</label><br>
     <input type="text" name="theatrename"><br><br>
     <label>Enter your Price:</label> <br>
-    <input type="text" name="Price"><br><br>
+    <input type="Number" name="Price"><br><br>
      <label>Enter your Theatre Id:</label> <br>
     <input type="text" name="theatre Id"><br><br>
      <button type="submit">Update Theatre</button><br>
@@ -133,7 +135,7 @@ li a:hover:not(.active) {
     <div class="ones">
     <h3>Delete Theatre</h3>
     
-    <form action="Deletetheatre" method="post">
+    <form action="Deletetheatre4" method="post">
     <label>Enter your Theatre Id:</label> <br>
     <input type="text" name="theatre Id"><br><br>
     <button type="submit">DeleteTheatre</button>

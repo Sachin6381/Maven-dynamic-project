@@ -5,37 +5,33 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
 <style>
-{
-    margin: 0;
-    padding: 0;
-    font-family: "Open Sans",sans-serif;
-    box-sizing: border-box;
-}
- 
-body{
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f1f1f1;
-}
- 
 .about-section{
     background: url(pic.jpg) no-repeat left;
     background-size: 55%;
   
     overflow: hidden;
-    height: 100%;
-    padding: 100px 0;
+    height: 90%;
+    padding: 20px 0;
+    
 }
  
 .inner-container{
+    margin-left:900px;
     width: 55%;
     float: right;
     background-color: #fdfdfd;
-    padding: 150px;
-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    padding: 40px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
  
 }
 .inner-container h1{
@@ -50,9 +46,12 @@ box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2
     line-height: 30px;
     text-align: justify;
     margin-bottom: 10px;
+    
 }
+
 h1{
-  color: #F85370;
+    
+    color: #F85370;
 }
  
 .skills{
@@ -89,8 +88,8 @@ h1{
 span{
   cursor: pointer;
   font-size: 16px;
-text-align: center;
-padding: 10px;
+  text-align: center;
+  padding: 10px;
   width: 500px;
 }
 span:hover{
@@ -116,7 +115,11 @@ transition: 0.5s;
   background-size:cover;
 }
 
+.class{
+margin-left:80px;
+margin-top:15px;
 
+}
 
 
 </style>
@@ -125,6 +128,15 @@ transition: 0.5s;
 
 
 <body>
+
+    <div class="class">
+   
+   <button type="submit" ><a href="Show.jsp" class="btn btn-primary">Back</a></button>  
+   
+    </div>
+  
+
+
     <div class="about-section">
         <div class="inner-container">
             <h1>About Us</h1>

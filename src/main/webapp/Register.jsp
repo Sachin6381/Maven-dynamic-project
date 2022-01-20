@@ -13,18 +13,19 @@
         margin: 50px;  
         padding: 0;  
         background-color:#6abadeba;  
-        font-family: 'Arial';  
+        font-family: 'Arial';
+        font-weight:bold;  
     }  
     .login{  
           
-            width: 350px;  
+            width: 270px;  
             overflow: hidden;  
             margin: auto;  
             margin: 20 0 0 450px;  
             padding: 30px;  
-            background: skyblue;  
+            background-color: rgba(180, 228, 230, 0.6);
             border-radius: 15px ;
-       
+            
              
               
     }  
@@ -38,31 +39,29 @@
         font-size: 17px;  
     }
    
-    input{
-        width: 250px;  
-        height: 30px;  
-        border: none;  
-        border-radius: 3px;  
-        padding-left: 8px;  
-    }
       label {
        color:black;
     }
-    #fe{
-        position: relative;
-        right: 20px;
-    }
+   
 
-    #ot{
-        position: relative;
-        right: 5px;
-    }
- 
- 
-    </style>
-    
-    
-    <style>
+
+.button1{
+padding:5px;
+margin-right:50px;
+}  
+.button2{
+padding:5px;
+margin-right:50px;
+
+}
+
+input{
+padding-right:10px;
+padding-top: 5px;
+
+}
+
+
 body {
   background-image: url('https://inc42.com/wp-content/uploads/2019/04/movie-ticketing.jpg');
   background-repeat: no-repeat;
@@ -80,10 +79,10 @@ body {
         <label for ="User Name">Username</label><br>     
         <input type="text" name="User" id="User" placeholder="Username" pattern="[A-Za-z]{3,}"title="minimum 3 characters should be there"><br><br>  
 
-        <label for="Gender">Gender</label><br>
-        <label for="" class="radio">Male</label>  <input type="radio" name="gender" value="male"> 
-        <label class="radio">Female</label> <input type="radio" id="fe" name="gender" class="radio" value="female">
-        <label class="radio" for="">Other</label>   <input type="radio" id="ot" class="radio" name="gender" value="other">
+        <label for="Gender">Gender</label><br><br>
+        <input type="radio" name="gender" value="male"><label for="" class="radio">Male</label><br>
+       <input type="radio" id="fe" name="gender" class="radio" value="female">  <label class="radio">Female</label><br>
+       <input type="radio" id="ot" class="radio" name="gender" value="other">   <label class="radio" for="">Others</label> 
        <br>     
     
            
@@ -98,9 +97,9 @@ body {
             title="Minimum 8 characters should be there.There should be atleast one numeric,special character,capital letter and small letter." placeholder="Enter your password" minlength="8" maxlength="16" required><br><br> 
 
          
-        <button type="submit" class="btn btn-primary">Submit</button>      
-         <button type="submit" class="btn btn-primary">Reset</button>  
-         <a href="Login1.jsp">Login</a>
+        <button class="button1">Submit</button>      
+         <button class="button2">Reset</button>  
+        
         
     </div>
     </form> 
